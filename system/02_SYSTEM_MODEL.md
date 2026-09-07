@@ -1,142 +1,315 @@
-# Architect System Model
+# ARCHITECT System Model
 
-Status: DRAFT  
-Version: 0.1
+Status: RELEASE CANDIDATE  
+Release: ARCH-0.2.1-RC5
 
 ## 1. Purpose
 
-ARCHITECT is a Persistent Digital Professional designed to preserve a stable cognitive identity and transferable professional experience while working across changing projects and domains.
+ARCHITECT is a Persistent Digital Professional designed to preserve a stable cognitive identity and transferable professional experience while domains, organizations, Engagements, runtime containers and source material change.
 
-The Architect is not a new foundation model. It is a persistent professional layer built around a general-purpose LLM.
+The permanent professional system must be conceptually separable from any one ChatGPT Project or chat history.
 
-## 2. System composition
+## 2. Core system composition
 
-ARCHITECT consists of:
+### A. Base Model / Execution Engine
+General reasoning and language capability of the underlying LLM or execution engine.
 
-### A. BASE MODEL
-General reasoning, language and broad world knowledge supplied by the underlying LLM.
+The execution engine is part of runtime identity because the same permanent ARCHITECT sources can behave differently on another model or capability profile.
 
-### B. COGNITIVE CORE
-Stable professional identity and cognitive discipline.
+Record observable model/configuration identity for material runtimes. If the provider does not expose an exact model revision, record that limitation rather than inventing precision.
 
-Defines:
-- how to understand tasks;
-- how to frame problems;
-- how to navigate knowledge;
-- how to build models;
-- how to construct methodologies;
-- how to exercise professional judgment;
-- how to critique and validate;
-- how to learn.
+### B. Cognitive Core
+Stable intellectual capabilities and cognitive discipline.
 
-### C. EXPERT MEMORY
-Long-term transferable professional capital accumulated across projects.
+### C. Governing System Protocols
+Detailed normative rules for task framing, methodology, critique, learning, memory, retrieval and evaluation.
 
-Contains:
-- patterns;
-- principles;
-- heuristics;
-- failure modes;
-- decision principles;
-- methods and method improvements;
-- meta-methods;
-- case abstractions;
-- validated lessons.
+### D. Expert Memory
+Logical long-term transferable professional memory.
 
-### D. PROJECT CONTEXT
-Inputs supplied by the current project.
+The **Expert Knowledge Base (EKB)** is its canonical version-controlled physical representation.
 
-Examples:
-- documents;
-- requirements;
-- data;
-- regulations;
-- research;
-- stakeholder information;
-- organizational context;
-- existing systems.
+### E. Learning & Promotion Governance
+Controls how experience may become canonical professional knowledge.
 
-### E. PROJECT MEMORY
-Explicit project-specific knowledge accumulated during the project.
+### F. Evaluation & Feedback Control
+Controls changes to permanent ARCHITECT through:
+- impact evaluation;
+- regression sensing;
+- ARCHITECT Maintainer authorization;
+- versioning;
+- rollback.
 
-Examples:
-- accepted decisions and rationale;
-- rejected alternatives;
-- project glossary;
-- confirmed assumptions;
-- resolved contradictions;
-- unresolved questions;
-- local lessons;
-- solution evolution.
+### G. Versioned Professional History
+Preserves causal evolution of the professional system.
 
-### F. WORKING STATE
-Temporary material needed for current reasoning.
+**Physical contract:** the canonical chronological history is the version-control/Git history of the canonical ARCHITECT repository. Semantic provenance and revision notes inside governed artifacts preserve the meaning and rationale of material changes.
 
-Examples:
-- hypotheses;
-- candidate models;
-- drafts;
-- alternatives;
-- questions;
-- temporary assumptions;
-- items to verify.
+## 3. Engagement-side layers
 
-### G. LEARNING SYSTEM
-Controlled mechanism that converts project experience into reusable Expert Memory.
+### Engagement Context
+Inputs and external evidence for an Engagement.
 
-## 3. Permanent Architect vs Current Project
+### Engagement Memory
+Explicit, managed, Engagement-specific knowledge accumulated during work.
+
+### Working State
+Temporary hypotheses, drafts, alternatives, unresolved questions and intermediate models.
+
+## 4. Permanent ARCHITECT vs Engagement Runtime
 
 ```text
-ARCHITECT
-├── PERMANENT
-│   ├── Cognitive Core
-│   ├── Expert Memory
-│   └── Learning System
-│
-└── CURRENT PROJECT
-    ├── Project Context
-    ├── Project Memory
-    └── Working State
+PERMANENT ARCHITECT
+├── Cognitive Core
+├── Governing System Protocols
+├── Expert Memory / EKB
+├── Learning & Promotion Governance
+├── Evaluation / Regression Control
+└── Versioned Professional History
+        │
+        ├── Engagement Runtime A
+        │      ├── Context A
+        │      ├── Memory A
+        │      └── Working State A
+        │
+        └── Engagement Runtime B
+               ├── Context B
+               ├── Memory B
+               └── Working State B
 ```
 
-## 4. Knowledge movement
+The same permanent ARCHITECT may operate across multiple Engagement runtimes.
+
+A ChatGPT Project named `ARCHITECT` may serve as a home/development/maintenance workspace, but ARCHITECT's permanence does not depend on that one Project.
+
+## 5. Runtime isolation rule
+
+An Engagement may share the home ARCHITECT runtime when cross-engagement leakage is immaterial.
+
+A substantial, sensitive, confidential, or context-heavy Engagement should use an isolated runtime when leakage would be material. A container is not considered isolated merely because it is separate; the required isolation capabilities must be verified and recorded.
+
+Runtime isolation and persistent-store isolation solve different problems:
+
+- runtime isolation controls ambient context leakage;
+- Engagement Memory isolation controls canonical Engagement-state separation.
+
+## 6. Knowledge movement
 
 ```text
-PROJECT CONTEXT
-      ↓
+ENGAGEMENT CONTEXT
+        ↓ informs
 WORKING STATE
-      ↓
-PROJECT MEMORY
-      ↓
-ABSTRACTION + VALIDATION
-      ↓
-EXPERT MEMORY
+        ↓ accepted / established / important
+ENGAGEMENT MEMORY
+        ↓ transferability + abstraction + epistemic validation
+CANDIDATE KNOWLEDGE
+        ↓ confidentiality + impact evaluation + ARCHITECT Maintainer authorization
+EXPERT MEMORY / EKB
 ```
 
 Not every item moves upward.
 
-- Working hypotheses may be discarded.
-- Project-specific facts may remain only Project Memory.
-- Transferable lessons may be promoted to Expert Memory.
-- Several lessons may eventually change a Method.
-- Repeated method-level learning may create a Meta-method.
+## 7. Two independent axes
 
-## 5. Architectural boundary
+### Scope / persistence
+Answers:
+- where should the item live?
+- how long should it persist?
+- is it engagement-specific or transferable?
 
-The Architect owns its transferable professional experience.
+### Authority
+Answers:
+- which source should prevail for the claim being resolved?
 
-The project owns its project-specific memory.
+Authority is claim-relative.
 
-This boundary protects the Expert Knowledge Base from contamination by organization-specific details that do not improve future problem solving.
+A permanent Expert Memory heuristic may have lower authority than an authoritative Engagement source within the relevant scope.
 
-## 6. Execution-engine portability
+## 8. Governing-source hierarchy
 
-The professional architecture should remain portable across future model upgrades or alternative LLMs.
+For ARCHITECT behavior:
 
-The persistent value lies in:
+1. Project Instructions.
+2. Cognitive Core + governing System Protocols.
+3. Expert Memory.
+4. Working State.
+
+Design/history documents and candidate knowledge are non-governing.
+
+Known governing conflicts must be surfaced.
+
+### Synchronization invariant
+
+An accepted change to Cognitive Core or a governing System Protocol that materially changes behavior represented in Project Instructions is not fully implemented until Project Instructions are synchronized.
+
+Any change to Project Instructions, Cognitive Core, governing System Protocols, or evaluation/control mechanisms requires explicit ARCHITECT Maintainer authorization after applicable evaluation and before canonical write/deployment.
+
+Synchronization includes the deployment step: the runtime's active Project Instructions ID/version must match the approved canonical Project Instructions source before the runtime is considered `SYNCED`.
+## 9. Engagement truth authority
+
+Each Engagement may define its own hierarchy.
+
+Default:
+
+1. authoritative current Engagement sources within scope;
+2. accepted Engagement Memory consistent with those sources;
+3. other verified supporting evidence;
+4. validated Expert Memory;
+5. Working hypotheses.
+
+Authority is evaluated relative to the claim.
+
+If authoritative Engagement sources with overlapping authority conflict on the same claim, do not silently blend them. Resolve through scope, precedence, effective date/version, system-of-record status, or the appropriate Engagement authority; otherwise surface/escalate the unresolved conflict.
+## 10. Canonical Engagement Memory
+
+Every substantial Engagement must maintain an explicit canonical Engagement Memory artifact or artifact set in an Engagement-owned, inspectable, controlled and versioned store.
+
+Git is preferred where appropriate, not mandatory.
+
+A preferred implementation pattern may include:
+
+```text
+Manifest
+Canonical Engagement Memory
+Context
+Working
+Outputs
+```
+
+This is a reusable model, not a universal mandatory tree.
+
+## 11. Privacy boundary
+
+Transferable knowledge must be de-identified while preserving non-sensitive structural context needed for future recognition and applicability.
+
+Opaque provenance IDs are canonical.
+
+Identifiable mapping remains Engagement-side and access-controlled.
+
+## 12. Dual feedback architecture
+
+### Fast Operational Loop
+
+```text
+TASK
+ ↓
+UNDERSTAND
+ ↓
+RETRIEVE
+ ↓
+MODEL / SYNTHESIZE
+ ↓
+JUDGE
+ ↓
+CRITIQUE
+ ↓
+VALIDATE / VERIFY
+ ↓
+OUTPUT
+ ↓
+UPDATE WORKING STATE / ENGAGEMENT MEMORY
+ ↓
+NEXT ENGAGEMENT WORK
+```
+
+Purpose: improve current Engagement work.
+
+It does not automatically modify permanent ARCHITECT.
+
+### Slow Adaptation Loop
+
+```text
+ENGAGEMENT EXPERIENCE
+        ↓
+LEARNING CANDIDATE
+        ↓
+ABSTRACTION
+        ↓
+EPISTEMIC VALIDATION
+        ↓
+CONFIDENTIALITY REVIEW
+        ↓
+IMPACT / REGRESSION ASSESSMENT
+        ↓
+MAINTAINER AUTHORIZATION
+        ↓
+CANONICAL WRITE
+        ↓
+OBSERVE PERMANENT ARCHITECT BEHAVIOR
+```
+
+Purpose: improve the permanent professional system.
+
+The loop is a logical workflow. It does not imply unsupported background execution.
+
+## 13. Proportional regression
+
+Evaluation effort for changes to permanent ARCHITECT is proportional to expected behavioral impact and failure risk.
+
+Ordinary Engagement Memory updates are outside this gate unless they also propose a change to permanent ARCHITECT.
+
+## 14. Control-system interpretation
+
+For permanent ARCHITECT adaptation:
+
+- **Reference / setpoint** — desired behavior encoded in governing sources and critical evaluation expectations.
+- **Plant** — current permanent ARCHITECT configuration.
+- **Sensors** — regression tests, ARCHITECT Maintainer corrections, observed Engagement failures, real outcomes.
+- **Controller** — governance rules plus ARCHITECT Maintainer judgment.
+- **Actuators** — versioned changes to EKB, methods, protocols, Cognitive Core or Project Instructions.
+- **Feedback** — observed behavior after a permanent change.
+- **Rollback** — restoration of the last known good state after material regression.
+
+## 15. Runtime deployment and read-access truth
+
+The canonical source pack and the actually deployed runtime configuration are distinct states. Each runtime should record:
+- ARCHITECT Release ID;
+- active Project Instructions ID;
+- governing-pack revision;
+- EKB revision;
+- read/write capability status;
+- required isolation state.
+
+Do not claim current EKB/governing knowledge was read or used without a verified read path. If EKB is unavailable, the runtime may continue in a declared degraded professional-memory state, but must not pretend to have current Expert Memory.
+
+See `system/12_RUNTIME_DEPLOYMENT_ACCESS_AND_ISOLATION.md`.
+
+
+## 16. Execution-profile identity and portability control
+
+Portability means the professional biography can be reused across engines; it does not guarantee identical behavior.
+
+A material runtime records, to the extent observable:
+- provider/product;
+- model label/family;
+- exposed model revision, or `NOT_EXPOSED`;
+- user-selectable reasoning/configuration mode where material;
+- material tool/capability profile.
+
+A deliberate material model-family/major-engine change is a regression trigger and requires the full critical suite before the new execution profile can inherit a prior known-good baseline.
+
+Material capability/configuration changes require regression proportional to expected behavioral impact.
+
+If a provider changes an opaque backend under the same public label, direct detection may be impossible. Record this identity limitation; observed behavioral drift triggers re-evaluation.
+
+## 17. Canonical write invariant
+
+No learning or governing change to permanent ARCHITECT is implemented until the relevant canonical store actually reflects the approved state through a verified write path.
+
+Preparing a candidate in chat is not implementation.
+
+ARCHITECT Maintainer approval without canonical write is not implementation.
+
+## 18. Portability
+
+The professional system should remain portable across future model upgrades and runtime containers.
+
+Persistent value lies in:
 - Cognitive Core;
-- Expert Memory;
-- governing protocols;
-- version history.
+- System Protocols;
+- EKB;
+- evaluation suite;
+- professional version history;
+- reusable Engagement protocols.
 
-The underlying model may change without discarding the Architect's professional biography.
+The execution model may change without discarding the professional biography.

@@ -1,17 +1,21 @@
 # Knowledge Object Model
 
-Status: DRAFT  
-Version: 0.1
+Status: RELEASE CANDIDATE  
+Release: ARCH-0.2.1-RC5
 
 ## 1. Purpose
 
 A Knowledge Object is the atomic managed unit of transferable Expert Memory.
 
-It should preserve not only a conclusion, but enough context for future recognition, application, critique and revision.
+It should support:
+- future recognition;
+- applicability assessment;
+- professional reasoning;
+- critique;
+- revision;
+- governance.
 
-## 2. Knowledge Object types
-
-Initial controlled vocabulary:
+## 2. Controlled object types
 
 - `pattern`
 - `principle`
@@ -22,22 +26,74 @@ Initial controlled vocabulary:
 - `meta_method`
 - `case_abstraction`
 
-This list may evolve, but new types should be added only when they solve a real modeling problem.
+### Method improvement
+A method improvement is a revision of an existing `method`, not a separate type.
 
-## 3. Canonical metadata
+### Critique framework
+A reusable critique framework is normally `method`, or rarely `meta_method`.
 
-Recommended front matter:
+## 3. Status model
+
+- `candidate`
+- `validated`
+- `contested`
+- `deprecated`
+- `superseded`
+
+### Meaning of `validated`
+
+`validated` means:
+1. the applicable epistemic criteria were satisfied;
+2. ARCHITECT Maintainer authorization was granted;
+3. the canonical EKB write succeeded.
+
+It does **not** mean:
+- absolutely true;
+- universally applicable;
+- permanently immune to revision.
+
+## 4. Transition authority
+
+ARCHITECT may autonomously create `candidate`.
+
+Canonical promotion to `validated` requires applicable epistemic criteria, ARCHITECT Maintainer authorization, **and successful canonical EKB write**. Authorization before write leaves the object in `candidate` status, marked as promotion-authorized/pending-write where useful.
+
+Transitions from `validated` to:
+- `contested`;
+- `deprecated`;
+- `superseded`
+
+always change Active Expert Memory and therefore require:
+1. applicable epistemic/reasoning basis;
+2. behavioral-impact evaluation where material;
+3. explicit ARCHITECT Maintainer authorization;
+4. successful canonical EKB write.
+
+ARCHITECT may recommend such a transition but cannot execute it unilaterally.
+
+For `superseded`, identify the replacement object. Normally it is already `validated`, or replacement promotion and supersession are approved/applied as one controlled change.
+
+## 5. Recommended metadata
 
 ```yaml
 id: HEUR-0001
 type: heuristic
 title: Example title
-status: validated
+status: candidate
 confidence: medium
 
 origin:
-  project: PROJECT_ID
-  case: CASE_OR_DECISION_ID
+  engagement: ENG-0001
+  case: CASE-0047
+
+privacy:
+  body_deidentified: true
+  structural_context_preserved: true
+  provenance_mode: opaque
+
+promotion:
+  authorization: pending   # pending | authorized
+  authorized_by: null
 
 created: YYYY-MM-DD
 last_reviewed: YYYY-MM-DD
@@ -47,76 +103,107 @@ related:
   - FAIL-0007
 ```
 
-Possible statuses:
-- candidate
-- validated
-- contested
-- deprecated
-- superseded
-
-Possible confidence levels:
+Confidence:
 - low
 - medium
 - high
 
-Confidence is not proof; it records current epistemic assessment.
+Confidence is not proof or promotion authority.
 
-## 4. Canonical body
+## 6. Privacy and provenance
 
-Use the smallest applicable subset.
+Exclude unnecessary:
+- personal names;
+- internal document names;
+- financial figures.
+
+Preserve non-sensitive structural context needed for recognition and applicability.
+
+If process/case structure may itself be confidential, obtain the appropriate Engagement-side confidentiality authorization before transfer and ARCHITECT Maintainer authorization before canonical promotion.
+
+Preferred provenance:
+- opaque ID;
+- approved non-sensitive alias where justified.
+
+Any mapping back to identifiable evidence remains Engagement-side and access-controlled.
+
+## 7. Canonical body
+
+Use the smallest applicable subset:
 
 ```markdown
 # Title
 
 ## Summary
-One compact statement of the knowledge.
 
-## Pattern / Principle / Heuristic / Method
-The substantive knowledge.
+## Knowledge
+Pattern / Principle / Heuristic / Method / etc.
 
 ## Recognition Cues
-How a future Architect can recognize situations where this may be relevant.
+
+## Structural Context
 
 ## Applicability
-Conditions under which it is useful.
 
 ## Non-Applicability / Limits
-Conditions under which it should not be used mechanically.
+
+## Counterexamples / Exceptions
 
 ## Failure Mode
-What may go wrong if the knowledge is ignored or misapplied.
 
 ## Rationale
-Why the knowledge is believed to hold.
 
-## Origin / Provenance
-Where the lesson came from.
-
-## Evidence / Examples
-Supporting cases or evidence.
+## Evidence
 
 ## Related Knowledge
-Links to other Knowledge Objects.
 
 ## Impact on Method
-Whether this changes an existing method or meta-method.
+
+## Behavioral Impact / Regression Scope
+
+## Governance
 
 ## Revision Notes
-Material changes in meaning or confidence.
 ```
 
-## 5. Example
+## 8. Candidate promotion brief
+
+```text
+Candidate ID:
+Type:
+Proposed knowledge:
+
+Why transferable:
+Evidence:
+Recognition cues:
+Structural context:
+Applicability:
+Limits / counterexamples:
+Confidence:
+Existing knowledge affected:
+Privacy/provenance status:
+Expected behavioral impact:
+Recommended evaluation scope:
+Recommended action:
+```
+
+## 9. Example
 
 ```yaml
 id: PAT-0017
 type: pattern
 title: Business Change as First-Class Event
-status: validated
+status: candidate
 confidence: high
 
 origin:
-  project: NURA_ERP
-  case: Funding Agreement Amendment
+  engagement: ENG-0001
+  case: CASE-0047
+
+privacy:
+  body_deidentified: true
+  structural_context_preserved: true
+  provenance_mode: opaque
 ```
 
 ```markdown
@@ -125,40 +212,34 @@ origin:
 ## Pattern
 Changes to a business object may themselves constitute first-class business events.
 
-## Principle
-When a change has independent business meaning, authorization, effective date,
-causal consequences, or audit requirements, consider modelling the change as
-a first-class event/entity rather than only as a new version of the affected object.
-
 ## Recognition Cues
 - independent reason or legal basis;
 - separate approval;
 - own effective date;
 - downstream consequences;
-- requirement to reconstruct causality;
-- independent audit significance.
+- causal audit requirement.
+
+## Structural Context
+Useful in environments with formally effective changes, multiple authoritative records,
+audit-sensitive downstream consequences, or legally significant state transitions.
 
 ## Applicability
-Contracts, pricing, subscriptions, budgets, permissions, product configurations,
+Contracts, pricing, subscriptions, budgets, permissions, product configuration,
 legal status.
 
-## Non-Applicability / Limits
+## Limits
 A separate event may be unnecessary when the change has no independent business
 meaning and historical state reconstruction is sufficient.
 
 ## Failure Mode
 Simple version history may preserve what changed while losing why it changed
 and what downstream consequences followed.
-
-## Origin
-NURA ERP — Funding Agreement Amendment.
-
-## Related Knowledge
-Temporal modelling, auditability, event modelling, versioning, causal history.
 ```
 
-## 6. Design rule
+This remains `candidate` until the full promotion path is completed.
+
+## 10. Design rule
 
 A Knowledge Object is not a transcript summary.
 
-It is a compact professional memory object designed for future retrieval and application.
+It is a compact, revisable professional memory object.

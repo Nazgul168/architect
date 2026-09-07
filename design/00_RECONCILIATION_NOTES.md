@@ -1,225 +1,77 @@
-# Reconciliation Notes
+# ARCHITECT Reconciliation History — v0.1 → v0.2-final
 
-Status: DRAFT  
-Version: 0.1  
-Purpose: Resolve contradictions and ambiguities in the current Architect concept before Project Instructions become canonical.
+Status: CLOSED / HISTORICAL / NON-GOVERNING  
+Release lineage: v0.1 → v0.2 → ARCH-0.2.1-RC5  
+Date: 2026-09-04
 
-## 1. Top-level layer labels
+This file records design history only.
 
-### Issue
-The draft uses `C` for both Project Context and Project Memory, then `D` for Working State.
+Current governing behavior lives in:
+- Project Instructions;
+- Cognitive Core;
+- governing System Protocols.
 
-### Resolution
-Use five distinct layers:
+The accepted v0.2 architecture decisions are recorded in:
+`design/00_ARCHITECTURE_DECISION_RECORD_v0.2.md`
 
-A. Cognitive Core  
-B. Expert Memory  
-C. Project Context  
-D. Project Memory  
-E. Working State
+## Major reconciliations
 
-The Learning System is a cross-layer mechanism rather than another memory layer.
+### Terminology
+Real-world initiatives are `Engagements`.
 
----
+`Project Instructions` remains the ChatGPT product term.
 
-## 2. Project Context vs Project Memory
+### Permanent system vs runtime
+ARCHITECT is permanent.
 
-### Issue
-The Project Memory description partially repeats the Project Context description ("what was given to understand the project", "changeable sources").
+One ChatGPT Project is not the architectural source of permanence.
 
-### Resolution
-Define them strictly:
+Engagement runtimes may be isolated when cross-engagement leakage would be material.
 
-**Project Context** = what the Architect receives as input about the current project.
+### Persistence vs authority
+Scope/persistence and authority are separate.
 
-Examples:
-- documents;
-- requirements;
-- data;
-- regulations;
-- research;
-- organizational context;
-- stakeholder information.
+Authority is claim-relative.
 
-**Project Memory** = what the Architect learns, decides, establishes, or records while working on the current project.
+### Learning governance
+ARCHITECT may create candidates and perform epistemic validation.
 
-Examples:
-- accepted project decisions and rationale;
-- rejected alternatives;
-- resolved contradictions;
-- glossary and accepted definitions;
-- confirmed assumptions;
-- unresolved questions;
-- local lessons learned;
-- evolution of the solution.
+Canonical promotion requires ARCHITECT Maintainer authorization in addition to applicable epistemic criteria.
 
-Current decisions belong in Project Memory, not Project Context.
+`validated` is not absolute truth.
 
----
+### Engagement Memory
+Every substantial Engagement requires an explicit canonical, inspectable, controlled and versioned Engagement Memory store.
 
-## 3. "Project Memory" has two meanings
+Git is preferred where appropriate, not mandatory.
 
-### Issue
-The draft uses `Project Memory` both for a controlled project-specific memory layer and for ChatGPT's ambient Project Memory capability. Those are materially different.
+The provided Manifest/Memory tree is a preferred implementation model, not a universal law.
 
-### Resolution
-Use the following terms:
+### Confidentiality
+Expert Memory is de-identified while preserving non-sensitive structural context required for retrieval and applicability.
 
-**PROJECT MEMORY** = Architect-managed, explicit, controlled project memory.
+Opaque provenance maps back to identifiable evidence only Engagement-side.
 
-**CHATGPT PROJECT MEMORY** = platform-level contextual memory. It may help retrieval but is not canonical and must not be relied on as the sole source of truth.
+### Feedback control
+Fast Loop improves Engagement work.
 
----
+Slow Loop governs changes to permanent ARCHITECT.
 
-## 4. Learning extraction vs transferable knowledge only
+Regression is proportional to expected behavioral impact and failure risk.
 
-### Issue
-One draft instruction says that after significant work the Architect should extract "only transferable knowledge". Elsewhere the learning protocol correctly says project-specific learning must first be consolidated into Project Memory and only then assessed for transferability.
+Ordinary durable Engagement Memory updates do not enter the Slow Loop merely because they persist.
 
-### Resolution
-Canonical rule:
+### Governing synchronization
+Project Instructions are executable runtime constitution.
 
-> After significant work, extract relevant experience. Consolidate important project-specific learning into Project Memory. Promote only meaningfully transferable, sufficiently supported abstractions into Expert Memory.
+Cognitive Core and System Protocols are detailed governing specification.
 
----
+Accepted behavioral changes are not fully implemented until governing layers are synchronized.
 
-## 5. Detailed cognitive protocols do not belong in Expert Memory
+### Canonical write
+No learning/governing change to permanent ARCHITECT is implemented until the canonical store actually reflects the approved state through a verified write path.
 
-### Issue
-One passage says that detailed instructions for task understanding, knowledge retrieval, methodology construction, critique, validation and learning are stored "in Expert Memory".
-
-### Resolution
-Detailed operating protocols belong in `core/` and `system/`.
-
-**Expert Memory** is reserved for accumulated professional capital:
-- transferable principles;
-- heuristics;
-- patterns;
-- failure modes;
-- case abstractions;
-- learned methods;
-- method improvements;
-- meta-methods.
-
-This prevents governing instructions from being mixed with learned content.
-
----
-
-## 6. Pattern is both an intermediate and a final knowledge type
-
-### Issue
-The abstraction ladder shows `CANDIDATE PATTERN` as a mandatory intermediate step before Principle / Heuristic / Failure Mode, while the EKB also treats Pattern as a final knowledge object.
-
-### Resolution
-Use a non-linear abstraction model:
-
-CASE / EXPERIENCE  
-→ OBSERVATION  
-→ ABSTRACTION  
-→ one or more of:
-- PATTERN
-- PRINCIPLE
-- HEURISTIC
-- FAILURE MODE
-- DECISION PRINCIPLE
-- METHOD IMPROVEMENT
-
-Several such objects may later alter a METHOD. Repeated method-level learning may eventually produce a META-METHOD.
-
-A Pattern can therefore be a final promoted knowledge object.
-
----
-
-## 7. Five abilities vs seven cognitive capabilities
-
-### Issue
-The mission is summarized as five abilities, while the Cognitive Core contains seven capabilities.
-
-### Resolution
-No conflict exists if the levels are explicit.
-
-The **five abilities** are the compact lifecycle summary:
-
-understand → retrieve → synthesize → critically check → learn.
-
-The **seven capabilities** are the operational decomposition of that lifecycle:
-
-1. Task Understanding & Problem Framing
-2. Knowledge Navigation
-3. Model Building
-4. Synthesis & Methodology Design
-5. Professional Judgment
-6. Validation & Verification
-7. Learning & Abstraction
-
----
-
-## 8. Constructive criticism vs Validation
-
-### Issue
-Critique sometimes appears as if it were an explicit process stage, while elsewhere it is described as a permanent characteristic of the Architect.
-
-### Resolution
-Constructive criticism is a **cross-cutting cognitive principle** applied throughout the seven capabilities.
-
-Validation and Verification remain explicit cognitive functions.
-
-- **Critique** challenges assumptions, completeness, consistency, alternatives and failure modes.
-- **Validation** asks whether the solution is appropriate for the real problem and intended use.
-- **Verification** asks whether the solution satisfies specified requirements, rules, constraints and acceptance criteria.
-
----
-
-## 9. Continuous learning vs end-of-project distillation
-
-### Issue
-The draft describes both promotion after significant work and Expert Distillation after a project ends.
-
-### Resolution
-Use both:
-
-- **Continuous learning:** promotion may occur after significant work when the evidence is sufficient.
-- **Project-close distillation:** a mandatory final pass checks whether valuable transferable learning remains trapped in Project Memory.
-
----
-
-## 10. GitHub vs Git repository
-
-### Issue
-The draft says "GitHub is the canonical physical storage".
-
-### Resolution
-Canonical formulation:
-
-> The version-controlled **Git repository** is the canonical Expert Knowledge Base. A private GitHub repository may host the canonical remote copy.
-
-This preserves portability to another Git host if needed.
-
----
-
-## 11. EKB access from ChatGPT
-
-### Issue
-The draft implies that Project Sources directly connect the EKB to the Architect.
-
-### Resolution
-Treat access as an implementation layer.
-
-The Architect must have a verified retrieval path to the EKB. Depending on available capabilities this may be:
-- a GitHub connector;
-- mounted Project Sources;
-- an indexed retrieval layer;
-- a controlled synchronization process;
-- another verified tool.
-
-Do not assume automatic read/write synchronization unless it is actually available.
-
----
-
-## 12. Working State example contains "3 alternatives"
-
-### Issue
-"3 possible variants" appears as an example but could be misread as a fixed rule.
-
-### Resolution
-Working State may contain any number of candidate alternatives appropriate to the task. No fixed number is required.
+## Taxonomy consistency
+- `principle` has canonical EKB storage.
+- Reusable critique frameworks are classified as `method` or, rarely, `meta_method`; no dedicated object type is created.
+- method improvement is revision of `method`.

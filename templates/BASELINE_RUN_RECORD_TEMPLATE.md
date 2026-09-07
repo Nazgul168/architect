@@ -1,0 +1,79 @@
+
+# Behavioral Regression / Baseline Run Record
+
+RUN_ID: BASELINE-XXXX  
+FINALIZATION_TRANSACTION_ID: UNASSIGNED / BFINAL-XXXX  
+STATUS: DRAFT / EXECUTED_NOT_APPROVED / CANDIDATE_BASELINE / KNOWN_GOOD / WITHDRAWN / SUPERSEDED / BASELINE_INCONSISTENT  
+EXECUTED_AT:  
+VERIFIED_BY:  
+
+## Permanent ARCHITECT Binding
+
+ARCHITECT_RELEASE_ID: ARCH-0.2.1-RC5  
+PROJECT_INSTRUCTIONS_ID: ARCH-PI-0.2.1-RC5  
+PROJECT_INSTRUCTIONS_SHA256: e1aafd3a96e8c0f2ad5dba8dfcab61b2c8f78fb0ac1b18eef5db4aacb150acf0  
+GOVERNING_PACK_REVISION:  
+EKB_REVISION:  
+EKB_UPDATE_POLICY:  
+RUNTIME_ID:  
+RUNTIME_DEPLOYMENT_RECORD_LOCATION:  
+EXECUTION_PROFILE_ID:  
+
+## Governance Preconditions
+
+GOVERNANCE_METADATA_READ: VERIFIED / UNVERIFIED / UNAVAILABLE  
+CURRENT_INTERACTOR_MAINTAINER_STATUS: VERIFIED / NOT_MAINTAINER / UNVERIFIED  
+SLOW_LOOP_READ_GATE: PASS / BLOCKED  
+EVALUATION_SCOPE_AUTHORIZED_BY:  
+EVALUATION_SCOPE_AUTHORIZATION_REFERENCE:  
+
+## Evaluation Scope
+
+CHANGE / BASELINE PURPOSE:  
+MANDATORY_TEST_CLASS:  
+APPLICABLE_TESTS:  
+EXCLUDED_TESTS:  
+EXCLUSION_RATIONALE:  
+
+Mandatory tests cannot be excluded.
+
+## Results
+
+| Test ID | Priority | Result PASS/PARTIAL/FAIL | Evidence / Notes |
+|---|---|---|---|
+
+## Acceptance Summary
+
+ALL_APPLICABLE_CRITICAL_PASS: YES / NO  
+TARGET_BEHAVIOR_PASS: YES / NO  
+NONCRITICAL_RESIDUAL_RISKS:  
+RESIDUAL_RISK_ACCEPTED_BY:  
+
+## Maintainer Decision
+
+DECISION: AUTHORIZE_KNOWN_GOOD_IF_FINALIZATION_SUCCEEDS / DO_NOT_APPROVE / REQUEST_RERUN  
+ARCHITECT_MAINTAINER_ID: ARCH-MAINT-001  
+CURRENT_INTERACTOR_AUTH_VERIFIED: YES / NO  
+DECISION_REFERENCE:  
+
+## Canonical Finalization
+
+FULL_RECORD_PATH:  
+MATCHING_REGISTRY: `evaluation/00_BASELINE_REGISTRY.md`  
+FINALIZATION_TRANSACTION_ID: BFINAL-XXXX  
+FINALIZATION_MODE: SAME_GIT_COMMIT / COORDINATED_NONATOMIC  
+RUN_RECORD_FINAL_STATUS: KNOWN_GOOD / other  
+REGISTRY_ENTRY_FINAL_STATUS: KNOWN_GOOD / other  
+RUN_RECORD_AND_REGISTRY_MATCH: YES / NO  
+FINALIZATION_WRITE_VERIFIED: YES / NO  
+
+For Git, the canonical version-control history is the finalization revision; the file does not need to self-contain its own commit hash.
+
+A run is not `KNOWN_GOOD` until:
+- acceptance criteria pass;
+- current acting Maintainer authorization is verified;
+- Maintainer decision authorizes KNOWN_GOOD conditional on successful finalization;
+- final Run Record and matching Registry entry share the same Run ID, Finalization Transaction ID and `KNOWN_GOOD` status;
+- both are canonically written together and verified.
+
+If only one artifact is written or they disagree, use `BASELINE_INCONSISTENT` and do not claim `KNOWN_GOOD`.

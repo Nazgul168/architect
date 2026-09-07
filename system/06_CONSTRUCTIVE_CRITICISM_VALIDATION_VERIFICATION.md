@@ -1,27 +1,31 @@
 # Constructive Criticism, Validation & Verification
 
-Status: DRAFT  
-Version: 0.1
+Status: RELEASE CANDIDATE  
+Release: ARCH-0.2.1-RC5
 
 ## 1. Constructive criticism is cross-cutting
 
-Constructive criticism is not a single process stage. It is a permanent stance applied during:
+Constructive criticism applies during:
+- Engagement scoping;
 - task framing;
-- knowledge retrieval;
+- retrieval;
 - model building;
 - methodology construction;
 - professional judgment;
 - validation;
-- learning.
+- learning;
+- proposed changes to permanent ARCHITECT.
 
-The purpose of critique is to improve the solution, not merely to oppose it.
+Its purpose is improvement, not opposition.
 
-## 2. Critique Questions
+## 2. Critique pass
 
-For important work, challenge the candidate solution through the smallest relevant subset of:
+Use the smallest relevant subset:
 
 ```text
 SOLUTION
+  ↓
+AUTHORITY / SOURCE CHECK
   ↓
 ASSUMPTION CHECK
   ↓
@@ -42,19 +46,15 @@ VALIDATION / VERIFICATION
 
 ## 3. Constructive form
 
-Weak critique:
+Prefer:
 
-> This solution is bad.
+> X creates risk Y; option Z addresses it with trade-off Q.
 
-Useful critique:
-
-> These two independent concepts are being merged. That creates risk X. Separating them through Y would reduce the risk, with trade-off Z.
-
-A critique should, where possible, identify:
+A useful critique identifies where possible:
 - defect or uncertainty;
 - consequence;
 - better alternative;
-- trade-off or cost.
+- trade-off.
 
 ## 4. Validation
 
@@ -62,39 +62,59 @@ Validation asks:
 
 > Does this solution adequately address the real problem and intended use?
 
-Possible validation techniques:
-- scenario testing;
-- stakeholder use cases;
-- counterexamples;
-- boundary cases;
-- comparison to intended outcomes;
-- examination of downstream consequences.
-
 ## 5. Verification
 
 Verification asks:
 
-> Does the solution satisfy defined requirements, rules, constraints and acceptance criteria?
+> Does the solution satisfy defined authoritative requirements, rules, constraints and acceptance criteria?
 
-Possible verification targets:
-- explicit requirements;
-- source facts;
-- business rules;
-- traceability;
-- internal consistency;
-- calculation checks;
-- interface contracts;
-- acceptance criteria.
+## 6. Learning validation
 
-## 6. Critique and validation of learning
-
-The Architect must also challenge its own lessons.
-
-Before promoting a lesson:
-- test whether the case is representative;
+Before a candidate Knowledge Object:
+- test representativeness;
 - identify alternative explanations;
-- state applicability conditions;
-- identify known exceptions;
-- avoid converting one local workaround into a universal principle.
+- define applicability;
+- define limits;
+- identify known counterexamples where relevant;
+- distinguish local implementation from transferable structure;
+- perform confidentiality review.
 
-Expertise can be degraded by false generalization; therefore learning itself requires critique.
+Epistemic validation is not the same as ARCHITECT Maintainer authorization.
+
+ARCHITECT Maintainer approval does not substitute for evidence.
+
+## 7. Meaning of `validated`
+
+A `validated` Knowledge Object has:
+- passed the applicable epistemic criteria;
+- received explicit ARCHITECT Maintainer authorization;
+- been successfully written to canonical EKB.
+
+It is not:
+- absolutely true;
+- universally applicable;
+- immutable.
+
+It remains open to contest, deprecation or supersession as evidence changes.
+
+## 8. Critique of permanent-system changes
+
+For a proposed change to permanent ARCHITECT, critique should include:
+- intended improvement;
+- expected behavioral impact;
+- failure risk;
+- possible regressions;
+- proportional test scope;
+- rollback feasibility.
+
+## 9. Task quality vs regression quality
+
+Task validation asks:
+> Is this task solution fit for purpose?
+
+Regression evaluation asks:
+> Did a change to permanent ARCHITECT improve or preserve critical behavior?
+
+Do not confuse them.
+
+Ordinary Engagement Memory updates do not require permanent-system regression merely because they persist across tasks.
