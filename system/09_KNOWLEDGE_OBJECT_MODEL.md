@@ -1,7 +1,7 @@
 # Knowledge Object Model
 
 Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Release: 1.0.0-rc.1
 
 ## 1. Purpose
 
@@ -44,8 +44,10 @@ A reusable critique framework is normally `method`, or rarely `meta_method`.
 
 `validated` means:
 1. the applicable epistemic criteria were satisfied;
-2. ARCHITECT Maintainer authorization was granted;
-3. the canonical EKB write succeeded.
+2. the change was accepted through the Role Updater controlled-release path;
+3. required System Validation passed;
+4. RF Owner approved the immutable release-candidate subject;
+5. the published clean ARCHITECT release containing the object was canonically written.
 
 It does **not** mean:
 - absolutely true;
@@ -54,9 +56,9 @@ It does **not** mean:
 
 ## 4. Transition authority
 
-ARCHITECT may autonomously create `candidate`.
+ARCHITECT may autonomously create an Engagement-side `candidate` and may recommend it for Role Updater review. It may not self-assign `APPROVED_FOR_ROLE_REVIEW` or write the candidate directly into canonical Expert Memory.
 
-Canonical promotion to `validated` requires applicable epistemic criteria, ARCHITECT Maintainer authorization, **and successful canonical EKB write**. Authorization before write leaves the object in `candidate` status, marked as promotion-authorized/pending-write where useful.
+Canonical promotion to `validated` is a clean-ROLE change. It requires applicable epistemic/privacy criteria, Role Updater evaluation, mandatory System Validation, explicit RF Owner approval of the release candidate, and successful publication of the immutable clean ARCHITECT release. Until publication, the object remains non-canonical candidate material.
 
 Transitions from `validated` to:
 - `contested`;
@@ -66,10 +68,11 @@ Transitions from `validated` to:
 always change Active Expert Memory and therefore require:
 1. applicable epistemic/reasoning basis;
 2. behavioral-impact evaluation where material;
-3. explicit ARCHITECT Maintainer authorization;
-4. successful canonical EKB write.
+3. Role Updater evaluation and required System Validation;
+4. explicit RF Owner release approval;
+5. successful immutable clean-ROLE publication.
 
-ARCHITECT may recommend such a transition but cannot execute it unilaterally.
+ARCHITECT may recommend such a transition but cannot execute it unilaterally; it is routed through Role Updater.
 
 For `superseded`, identify the replacement object. Normally it is already `validated`, or replacement promotion and supersession are approved/applied as one controlled change.
 
@@ -91,9 +94,10 @@ privacy:
   structural_context_preserved: true
   provenance_mode: opaque
 
-promotion:
-  authorization: pending   # pending | authorized
-  authorized_by: null
+role_review:
+  status: CANDIDATE        # CANDIDATE | LOCAL_ONLY | RECOMMENDED_FOR_ROLE_REVIEW | APPROVED_FOR_ROLE_REVIEW | REJECTED | EXPORTED_TO_ROLE_UPDATER
+  approved_by: null
+  approved_at: null
 
 created: YYYY-MM-DD
 last_reviewed: YYYY-MM-DD
@@ -119,7 +123,7 @@ Exclude unnecessary:
 
 Preserve non-sensitive structural context needed for recognition and applicability.
 
-If process/case structure may itself be confidential, obtain the appropriate Engagement-side confidentiality authorization before transfer and ARCHITECT Maintainer authorization before canonical promotion.
+If process/case structure may itself be confidential, obtain the appropriate Engagement-side confidentiality authorization before transfer. Any canonical promotion is separately governed by Role Updater and RF Owner release approval.
 
 Preferred provenance:
 - opaque ID;

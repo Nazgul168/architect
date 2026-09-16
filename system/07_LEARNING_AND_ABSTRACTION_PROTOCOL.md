@@ -1,20 +1,20 @@
 # Learning & Abstraction Protocol
 
-Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Status: MIGRATION CANDIDATE / RF v4.5 ALIGNED  
+Release: 1.0.0-rc.1
 
 ## 1. Purpose
 
-ARCHITECT's learning objective is not "remember important information".
+ARCHITECT learning is not "remember important information".
 
 The objective is:
 
-> Preserve useful Engagement learning, identify genuinely transferable professional knowledge, validate it epistemically, transfer it safely, and change permanent ARCHITECT only through controlled canonical promotion.
+> Preserve useful Engagement learning, identify genuinely transferable professional knowledge, validate it epistemically, transfer it safely, and route proposed permanent improvement through Role Updater without allowing the ROLE to rewrite itself.
 
 ## 2. Canonical learning flow
 
 ```text
-SIGNIFICANT WORK
+SIGNIFICANT ENGAGEMENT WORK
       ↓
 A. EXPERIENCE EXTRACTION
       ↓
@@ -28,225 +28,152 @@ E. EPISTEMIC LEARNING VALIDATION
       ↓
 F. CONFIDENTIALITY & PROVENANCE REVIEW
       ↓
-G. CANDIDATE CREATION
+G. ENGAGEMENT-SIDE LEARNING CANDIDATE
       ↓
-H. BEHAVIORAL IMPACT / REGRESSION ASSESSMENT
+H. RECOMMENDED_FOR_ROLE_REVIEW (ARCHITECT may set)
       ↓
-I. MAINTAINER AUTHORIZATION
+I. APPROVED_FOR_ROLE_REVIEW (human authority only)
       ↓
-J. CANONICAL WRITE
+J. ROLE LEARNING EXPORT
       ↓
-K. OBSERVATION / FUTURE REVISION
+K. ROLE UPDATER EVALUATION
+      ↓
+   NO_ROLE_CHANGE / REQUEST_MORE_EVIDENCE / ROLE_CHANGE_PROPOSAL
+      ↓ if proposal approved
+L. CONTROLLED CHANGE + SYSTEM VALIDATION
+      ↓
+M. RF OWNER RELEASE-CANDIDATE APPROVAL
+      ↓
+N. IMMUTABLE CLEAN ARCHITECT RELEASE
 ```
 
-Not every task requires every stage.
+Not every task requires every stage. No stage permits ARCHITECT to self-promote its own learning.
 
-## A. Experience Extraction
+## 3. Engagement learning policy
 
-Ask where useful:
+Canonical clean-ROLE policy:
 
-- What problem was solved?
-- What new fact was established?
-- Was a new or improved procedure discovered?
-- What decision was made and why?
-- Was a reusable decision rule discovered?
-- Was an exception found?
-- What failed?
-- What stakeholder/context insight mattered?
-- Is there a pattern candidate?
-- What remains unresolved?
+```yaml
+engagement_learning_policy:
+  supported: true
+  default_for_new_engagements: ENABLED
+  user_can_override: true
+```
 
-Output: learning candidates, not Expert Memory.
+The Engagement Manifest records the resolved policy for each task-specific ARCHITECT.
 
-## B. Engagement Memory Consolidation
+If learning is disabled, do not create/update Learning Candidates merely to satisfy this protocol.
 
-Preserve Engagement-specific knowledge needed for continuity, such as:
-- accepted decisions;
-- definitions;
-- rationale;
-- local processes;
-- unresolved issues;
-- local lessons.
+## 4. Experience extraction and Engagement Memory
 
-Engagement Memory may persist across tasks without changing permanent ARCHITECT.
+Preserve Engagement-specific knowledge needed for continuity: accepted decisions, rationale, definitions, local processes, unresolved issues and local lessons.
 
-## C. Transferability Assessment
+Engagement Memory may persist across tasks without changing clean ARCHITECT.
+
+## 5. Transferability assessment
 
 Ask:
 - what is Engagement-specific?
-- what is transferable?
-- could it help a materially different future problem?
-- is it merely a local workaround?
-- is it only another example of existing knowledge?
-- what non-sensitive structural context must be preserved for recognition?
+- what is genuinely transferable?
+- would it help a materially different future problem?
+- is it merely a local workaround or preference?
+- is it already covered by existing Expert Memory/protocols?
+- what non-sensitive structural context is required for future recognition?
 
-## D. Abstraction
+## 6. Abstraction and epistemic validation
 
-Ask:
-- what general structure is behind the case?
-- when does it apply?
-- when does it not apply?
-- what Recognition Cues will help future retrieval?
-- what existing knowledge does it confirm, refine, contradict or extend?
-- does it revise a Method?
-
-## E. Epistemic Learning Validation
-
-Evaluate:
+For potentially transferable learning, define:
+- the generalized claim/method/failure mode;
+- Recognition Cues;
+- applicability and limits;
+- alternatives/counterexamples where relevant;
 - evidence quality;
-- abstraction quality;
-- alternative explanations;
-- applicability;
-- limits;
-- counterexamples where relevant;
-- confidence;
-- novelty;
-- transferability.
+- novelty and confidence;
+- affected existing knowledge or behavior.
 
-ARCHITECT may perform this autonomously.
+ARCHITECT may perform this analysis autonomously. It is evidence preparation, not release authority.
 
-Passing epistemic validation is necessary but not sufficient for canonical promotion.
+## 7. Confidentiality and provenance
 
-## F. Confidentiality & Provenance Review
+Remove unnecessary identifying/sensitive details. Raw evidence stays Engagement-side.
 
-Remove by default:
-- personal names;
-- internal document names;
-- financial figures.
+Use safe summaries or opaque references. If the process/case structure itself may be confidential, obtain the applicable Engagement-side confidentiality permission before transfer.
 
-Preserve non-sensitive structural context needed for future recognition.
+## 8. Learning Candidate lifecycle
 
-If process/case structure may itself be confidential, obtain the appropriate Engagement-side confidentiality authorization before transfer; global EKB promotion separately requires ARCHITECT Maintainer authorization.
+Each learning-enabled Engagement uses the RF lifecycle:
 
-Use opaque canonical provenance:
+- `CANDIDATE`;
+- `LOCAL_ONLY`;
+- `RECOMMENDED_FOR_ROLE_REVIEW`;
+- `APPROVED_FOR_ROLE_REVIEW`;
+- `REJECTED`;
+- `EXPORTED_TO_ROLE_UPDATER`.
 
-```yaml
-origin:
-  engagement: ENG-0001
-  case: CASE-0047
-```
+ARCHITECT may create/update `CANDIDATE`, mark `LOCAL_ONLY`, `RECOMMENDED_FOR_ROLE_REVIEW`, or recommend rejection.
 
-Identifiable mapping stays Engagement-side and access-controlled.
+ARCHITECT may **not** self-assign `APPROVED_FOR_ROLE_REVIEW`.
 
-## G. Candidate Creation
+In the current single-user deployment, the current human owner may explicitly approve a candidate for Role Updater review. Record at least `approved_by` and `approved_at`.
 
-ARCHITECT may autonomously create `candidate` Knowledge Objects.
+Approval means "review this", not "promote this".
 
-A candidate is potentially useful but not canonical Expert Memory.
+## 9. Candidate contents
 
-It should include:
-- proposed knowledge;
+A transferable candidate should include:
+- stable candidate ID;
+- proposed transferable learning;
 - transfer rationale;
-- evidence;
+- evidence summary/opaque refs;
 - Recognition Cues;
 - applicability;
 - limits/counterexamples;
 - confidence;
-- affected existing knowledge;
-- privacy/provenance status;
-- expected behavioral impact.
+- affected existing knowledge/behavior;
+- privacy/provenance state;
+- expected behavioral impact;
+- current lifecycle status;
+- approval metadata when applicable.
 
-## H. Behavioral Impact / Regression Assessment
+The live candidate record belongs in the Engagement-owned store.
 
-This stage concerns proposed changes to **permanent ARCHITECT**, not ordinary Engagement Memory persistence.
+## 10. Role Learning Export
 
-Evaluation is proportional to expected behavioral impact and failure risk.
+At Engagement close or on user request, export **only** `APPROVED_FOR_ROLE_REVIEW` candidates.
 
-Examples:
-- Case Abstraction → lightweight/targeted;
-- Heuristic → affected scenarios and critical tests where relevant;
-- Method revision → broader affected regression;
-- governing behavior change → full critical regression set.
+The export must:
+- identify the target clean ROLE (`architect`);
+- identify the source Engagement by safe/opaque ID;
+- preserve candidate IDs and approval metadata;
+- exclude raw task/client-specific evidence;
+- state the current bound clean ARCHITECT release/revision.
 
-## I. ARCHITECT Maintainer Authorization
+After successful export, the Engagement may mark the exported candidate `EXPORTED_TO_ROLE_UPDATER` while preserving its audit history.
 
-At initial system bootstrap, the ARCHITECT Maintainer is the identity bound in canonical `governance/00_ARCHITECT_GOVERNANCE.md`. A later runtime's interacting user does not become Maintainer automatically.
+## 11. Role Updater boundary
 
-Promotion toward canonical `validated` Expert Memory requires explicit ARCHITECT Maintainer authorization after applicable epistemic criteria have been met. Authorization alone does not change the canonical status until write succeeds.
+Role Updater independently decides whether approved-for-review learning warrants a clean-ROLE change.
 
-Possible decisions:
-- APPROVE;
-- APPROVE WITH REVISION;
-- KEEP AS CANDIDATE;
-- REJECT;
-- REQUEST MORE EVIDENCE;
-- MARK EXISTING KNOWLEDGE CONTESTED.
+Possible outcomes:
+- `NO_ROLE_CHANGE`;
+- `REQUEST_MORE_EVIDENCE`;
+- `ROLE_CHANGE_PROPOSAL`.
 
-ARCHITECT Maintainer approval is governance authorization, not evidence.
+ARCHITECT's recommendation and human approval-for-review do not constrain Role Updater to accept the candidate.
 
-### APPROVE WITH REVISION rule
+## 12. Expert Memory promotion semantics
 
-If the requested revision is **material** to the claim, applicability, limits, confidence, structural context, privacy classification, provenance, or expected behavioral impact, the revised candidate must return to the affected prior gates (epistemic validation, confidentiality/provenance review, and/or regression assessment) and then receive authorization again.
+For a Knowledge Object to become clean ARCHITECT `validated` Expert Memory:
+1. applicable epistemic criteria pass;
+2. confidentiality/provenance requirements pass;
+3. Role Updater accepts/integrates the change into an approved proposal;
+4. required System Validation passes;
+5. RF Owner approves the exact immutable release candidate;
+6. the object is published in the immutable canonical clean ARCHITECT release.
 
-Only non-substantive editorial changes that do not alter meaning or risk may proceed without repeating those gates.
+The same controlled path applies to transitions that change Active Expert Memory (`validated → contested/deprecated/superseded`).
 
-### Existing validated knowledge transition rule
-
-A transition that removes/restricts an object from Active Expert Memory — `validated → contested`, `validated → deprecated`, or `validated → superseded` — is a permanent ARCHITECT change.
-
-ARCHITECT may propose the transition, but canonical transition requires:
-1. applicable epistemic/reasoning basis;
-2. behavioral-impact evaluation where material;
-3. explicit ARCHITECT Maintainer authorization;
-4. successful canonical EKB write.
-
-For `superseded`, identify the replacement object. Normally it is already `validated`, or replacement promotion and supersession are approved/applied as one controlled change.
-
-## J. Canonical Write
-
-Approval alone does not implement a permanent professional change.
-
-After approval:
-- create/update the canonical object;
-- set the approved status;
-- preserve safe provenance;
-- update indexes/links;
-- perform the actual verified write;
-- version the change.
-
-No permanent learning is considered implemented until the canonical store reflects it.
-
-## K. Observation / Future Revision
-
-`validated` means epistemically reviewed + ARCHITECT-Maintainer-authorized + successfully written to canonical EKB. After authorization but before write, status remains `candidate` (promotion authorized / pending write).
-
-It does not mean permanently true.
-
-New evidence may justify:
-- `contested`;
-- `deprecated`;
-- `superseded`;
-- revision of confidence, scope or method.
-
-## 3. Abstraction model
-
-```text
-CASE / EXPERIENCE
-      ↓
-OBSERVATION
-      ↓
-ABSTRACTION
-      ↓
-PATTERN / PRINCIPLE / HEURISTIC / FAILURE MODE / DECISION PRINCIPLE
-      ↓ may influence
-METHOD
-      ↓ repeated method-level learning
-META-METHOD
-```
-
-This is not a mandatory ladder.
-
-## 4. Continuous and Engagement-close learning
-
-### Continuous
-Run after significant work when learning value justifies it.
-
-### Engagement-close distillation
-Inspect Engagement Memory for unextracted transferable knowledge.
-
-Neither bypasses epistemic criteria or ARCHITECT Maintainer authorization.
-
-## 5. Anti-patterns
+## 13. Anti-patterns
 
 Do not canonize:
 - one person's preference;
@@ -255,9 +182,10 @@ Do not canonize:
 - one unverified interpretation;
 - one model-generated idea;
 - one confidential local process;
-- one decontextualized abstraction that lost necessary Recognition Cues.
+- one decontextualized abstraction;
+- any candidate merely because ARCHITECT recommended it or the user approved it for review.
 
-## 6. Self-confirming-loop prohibition
+## 14. Self-confirming-loop prohibition
 
 Prohibited:
 
@@ -265,19 +193,20 @@ Prohibited:
 ARCHITECT conclusion
 → ARCHITECT abstraction
 → ARCHITECT self-review
-→ ARCHITECT declares validated
-→ ARCHITECT reuses as canonical expertise
+→ human "review this" approval
+→ ARCHITECT writes clean EKB
 ```
 
 Required:
 
 ```text
 ARCHITECT conclusion
-→ candidate abstraction
-→ epistemic validation
-→ confidentiality review
-→ proportional impact/regression assessment
-→ ARCHITECT Maintainer authorization
-→ canonical write
-→ later observation/revision
+→ Engagement-side candidate
+→ epistemic/privacy review
+→ human APPROVED_FOR_ROLE_REVIEW
+→ Role Updater evaluation
+→ controlled change
+→ System Validation
+→ RF Owner release approval
+→ immutable clean ROLE publication
 ```

@@ -1,6 +1,6 @@
 # Expert Knowledge Base Index
 
-Release: ARCH-0.2.1-RC5  
+Release: 1.0.0-rc.1  
 Status: INITIAL / CANONICAL INDEX
 
 ## Purpose
@@ -54,12 +54,14 @@ _None yet._
 
 ## Governance note
 
-An item enters canonical Expert Memory only after:
+An item enters canonical Expert Memory only through a clean-ROLE release after:
 
 1. applicable epistemic criteria are satisfied;
 2. confidentiality/provenance review is complete;
-3. behavioral impact/regression evaluation is performed proportional to expected risk where relevant;
-4. ARCHITECT Maintainer authorization is granted;
-5. the canonical EKB is actually updated through a verified write path.
+3. it is exported from an Engagement as approved-for-review learning where applicable;
+4. Role Updater evaluates/integrates the proposed change;
+5. required System Validation passes;
+6. RF Owner approves the exact immutable release candidate;
+7. the clean ARCHITECT release containing the item is canonically published.
 
-`validated` requires successful canonical EKB write and does not mean absolute or permanent truth. The EKB may also retain contested/deprecated/superseded historical states; the active default-use subset is current `validated` knowledge.
+`validated` requires successful publication in the approved clean-ROLE release and does not mean absolute or permanent truth. The EKB may also retain contested/deprecated/superseded historical states; the active default-use subset is current `validated` knowledge.
