@@ -1,7 +1,7 @@
 # Task Understanding & Knowledge Navigation Protocol
 
 Status: MIGRATION CANDIDATE / PROFESSIONAL CONTENT PRESERVED  
-Release: 1.0.0-rc.1
+Release: 1.0.0
 
 ## 1. Purpose
 

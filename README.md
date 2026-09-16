@@ -1,6 +1,6 @@
 # ARCHITECT
 
-Canonical clean-ROLE migration candidate: **1.0.0-rc.1**  
+Proposed first RF-managed clean-ROLE release: **1.0.0**  
 Status: **PREPARED / VALIDATION REQUIRED — NOT PUBLISHED, NOT KNOWN-GOOD**  
 Source lineage: `ARCH-0.2.1-RC5` at `6f843575253c35312d24d03bd6fe9560045b8e95`
 
@@ -124,6 +124,6 @@ Canonical parent-binding update and ChatGPT/runtime synchronization are separate
 
 ## Migration status
 
-`1.0.0-rc.1` is a prepared migration candidate. It must not be registered as an ACTIVE reusable clean ROLE in the Role Catalog until the first RF-managed release is actually validated, approved and published.
+`1.0.0` is the proposed release version of the prepared migration candidate. It must not be registered as an ACTIVE reusable clean ROLE in the Role Catalog until the first RF-managed release is actually validated, approved and published.
 
 The legacy `ARCH-0.2.1-RC5` line remains historical provenance and is not retroactively declared a validated RF release.

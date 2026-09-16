@@ -1,7 +1,7 @@
 # ARCHITECT Runtime Behavioral Baseline Registry
 
 Status: MIGRATION CANDIDATE  
-Clean ROLE line: 1.0.0-rc.1
+Clean ROLE line: 1.0.0
 
 ## Purpose
 

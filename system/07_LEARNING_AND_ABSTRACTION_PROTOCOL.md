@@ -1,7 +1,7 @@
 # Learning & Abstraction Protocol
 
 Status: MIGRATION CANDIDATE / RF v4.5 ALIGNED  
-Release: 1.0.0-rc.1
+Release: 1.0.0
 
 ## 1. Purpose
 

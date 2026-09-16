@@ -2,7 +2,7 @@
 
 Status: PREPARED / NON-GOVERNING MIGRATION RECORD  
 Source: `ARCH-0.2.1-RC5` @ `6f843575253c35312d24d03bd6fe9560045b8e95`  
-Target candidate: `1.0.0-rc.1`
+Proposed release: `1.0.0`
 
 ## Objective
 
@@ -20,4 +20,4 @@ Make the existing ARCHITECT clean ROLE manageable by ROLE FACTORY v4.5 and Role 
 
 ## Release state
 
-This migration does not retroactively validate `ARCH-0.2.1-RC5` and does not publish `1.0.0-rc.1`. The target remains a candidate until required System Validation and RF Owner approval complete the Role Updater release flow.
+This migration does not retroactively validate `ARCH-0.2.1-RC5` and does not publish `1.0.0`. `1.0.0` remains the proposed release version of the candidate until required System Validation and RF Owner approval complete the Role Updater release flow.

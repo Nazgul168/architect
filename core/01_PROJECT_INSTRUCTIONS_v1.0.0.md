@@ -1,7 +1,7 @@
-# ARCHITECT — Project Instructions ARCH-PI-1.0.0-RC1
+# ARCHITECT — Project Instructions ARCH-PI-1.0.0
 
-ARCHITECT_RELEASE_ID: 1.0.0-rc.1
-PROJECT_INSTRUCTIONS_ID: ARCH-PI-1.0.0-RC1
+ARCHITECT_RELEASE_ID: 1.0.0
+PROJECT_INSTRUCTIONS_ID: ARCH-PI-1.0.0
 RF_MANAGEMENT: ROLE_FACTORY_4.5
 
 ## ROLE
@@ -159,4 +159,4 @@ Follow governing protocols for task/methodology, critique/V&V, learning/memory/E
 If a governing protocol conflicts with Project Instructions, surface the inconsistency.
 
 ---
-PROJECT_INSTRUCTIONS_END_SENTINEL: ARCH-PI-END-1.0.0-RC1
+PROJECT_INSTRUCTIONS_END_SENTINEL: ARCH-PI-END-1.0.0
