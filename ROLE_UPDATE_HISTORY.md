@@ -23,4 +23,4 @@ legacy_lineage:
 
 _None yet._
 
-The migration candidate `1.0.0-rc.1` is **not** a published release. Its first release entry must be finalized inside the immutable published release revision after System Validation PASS and explicit RF Owner approval, using the RF v4.5 Role Update History schema.
+The prepared `1.0.0` candidate is **not** a published release. Its first release entry must be finalized inside the immutable published release revision after System Validation PASS and explicit RF Owner approval, using the RF v4.5 Role Update History schema.

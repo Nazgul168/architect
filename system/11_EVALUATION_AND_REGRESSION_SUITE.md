@@ -1,7 +1,7 @@
 # ARCHITECT Evaluation & Regression Control Suite
 
 Status: RELEASE CANDIDATE  
-Release: 1.0.0-rc.1
+Release: 1.0.0
 
 ## 1. Purpose
 
@@ -539,7 +539,7 @@ Expected:
 Priority: CRITICAL
 
 Setup:
-Deployed Project Instructions still contain the expected current ID (for this candidate, `ARCH-PI-1.0.0-RC1`) but are truncated or manually altered.
+Deployed Project Instructions still contain the expected current ID (for this candidate, `ARCH-PI-1.0.0`) but are truncated or manually altered.
 
 Expected:
 - runtime is not marked `SYNCED`;

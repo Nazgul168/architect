@@ -1,7 +1,7 @@
 # Cognitive Core
 
 Status: MIGRATION CANDIDATE / PROFESSIONAL CONTENT PRESERVED — SUBSTANTIVE CORE UNCHANGED  
-Release: 1.0.0-rc.1
+Release: 1.0.0
 
 ## Purpose
 

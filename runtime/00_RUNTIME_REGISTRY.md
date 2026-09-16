@@ -1,7 +1,7 @@
 # ARCHITECT Runtime Registry
 
 Status: MIGRATION CANDIDATE  
-Clean ROLE: 1.0.0-rc.1
+Clean ROLE: 1.0.0
 
 ## Purpose
 

@@ -2,7 +2,7 @@
 # Runtime Deployment, Access & Isolation Protocol
 
 Status: RELEASE CANDIDATE  
-Release: 1.0.0-rc.1
+Release: 1.0.0
 
 ## 1. Purpose
 
@@ -50,9 +50,9 @@ Each material runtime records:
 Never invent a hidden model revision.
 
 This migration candidate expects:
-- `ARCHITECT_RELEASE_ID: 1.0.0-rc.1`
-- `PROJECT_INSTRUCTIONS_ID: ARCH-PI-1.0.0-RC1`
-- end sentinel: `ARCH-PI-END-1.0.0-RC1`
+- `ARCHITECT_RELEASE_ID: 1.0.0`
+- `PROJECT_INSTRUCTIONS_ID: ARCH-PI-1.0.0`
+- end sentinel: `ARCH-PI-END-1.0.0`
 
 ## 4. Execution-Engine Portability Control
 

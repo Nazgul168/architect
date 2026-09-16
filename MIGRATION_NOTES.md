@@ -2,7 +2,7 @@
 
 Source repository: `Nazgul168/architect`
 Verified supplied local source head: `6f843575253c35312d24d03bd6fe9560045b8e95` (`ARCH-0.2.1-RC5`).
-Target migration candidate: `1.0.0-rc.1`.
+Proposed first RF-managed release: `1.0.0` (candidate remains unpublished until validation + approval).
 
 ## Status
 
@@ -15,7 +15,7 @@ Target migration candidate: `1.0.0-rc.1`.
 ## ADD
 - `ROLE_UPDATE_HISTORY.md`
 - `SYSTEM_MANIFEST.md`
-- `core/01_PROJECT_INSTRUCTIONS_v1.0.0_RC1.md`
+- `core/01_PROJECT_INSTRUCTIONS_v1.0.0.md`
 - `design/03_RF45_MIGRATION_DECISION_RECORD.md`
 - `evaluation/system_validation/README.md`
 - `templates/SYSTEM_VALIDATION_RECORD_TEMPLATE.md`
@@ -67,4 +67,4 @@ Target migration candidate: `1.0.0-rc.1`.
 
 Apply this changeset on a dedicated migration branch, not directly as a published release. Do not merge/tag/publish final `1.0.0` until Role Updater is usable, the required System Validation has executed with all applicable critical tests PASS, and the RF Owner explicitly approves the immutable release candidate.
 
-The next phase is the actual task-specific ARCHITECT Engagement migration. It should bind to the first published clean ARCHITECT release, not to this `1.0.0-rc.1` migration candidate.
+The next phase is the actual task-specific ARCHITECT Engagement migration. It should bind to the first published clean ARCHITECT release, only after `1.0.0` is actually validated, approved and published.

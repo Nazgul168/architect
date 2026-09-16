@@ -1,7 +1,7 @@
 # ARCHITECT System Model
 
 Status: RELEASE CANDIDATE  
-Release: 1.0.0-rc.1
+Release: 1.0.0
 
 ## 1. Purpose
 

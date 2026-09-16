@@ -4,7 +4,7 @@
 system_id: architect
 name: ARCHITECT
 type: CLEAN_ROLE
-release: 1.0.0-rc.1
+release: 1.0.0
 status: PREPARED / VALIDATION_REQUIRED
 canonical_repository: Nazgul168/architect
 
@@ -50,7 +50,7 @@ engagement_learning_policy:
   user_can_override: true
 
 paths:
-  governing_instructions: core/01_PROJECT_INSTRUCTIONS_v1.0.0_RC1.md
+  governing_instructions: core/01_PROJECT_INSTRUCTIONS_v1.0.0.md
   professional_profile: README.md
   cognitive_core: core/03_COGNITIVE_CORE.md
   protocols:

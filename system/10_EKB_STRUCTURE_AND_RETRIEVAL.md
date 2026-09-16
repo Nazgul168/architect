@@ -1,7 +1,7 @@
 # Expert Knowledge Base Structure & Retrieval
 
 Status: RELEASE CANDIDATE  
-Release: 1.0.0-rc.1
+Release: 1.0.0
 
 ## 1. Purpose
 
@@ -38,7 +38,7 @@ architect/
 ├── ROLE_UPDATE_HISTORY.md
 ├── FILE_MANIFEST.md
 ├── core/
-│   ├── 01_PROJECT_INSTRUCTIONS_v1.0.0_RC1.md
+│   ├── 01_PROJECT_INSTRUCTIONS_v1.0.0.md
 │   └── 03_COGNITIVE_CORE.md
 ├── governance/
 │   └── 00_ARCHITECT_GOVERNANCE.md
