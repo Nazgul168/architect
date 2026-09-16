@@ -1,14 +1,15 @@
+# ARCHITECT Runtime Behavioral Baseline Registry
 
-# ARCHITECT Behavioral Baseline Registry
-
-Status: RELEASE CANDIDATE  
-Release line: ARCH-0.2.1-RC5
+Status: MIGRATION CANDIDATE  
+Clean ROLE line: 1.0.0
 
 ## Purpose
 
-Canonical index of executed behavioral regression runs and accepted known-good baselines for permanent ARCHITECT.
+Canonical index of executed Runtime Compatibility / behavioral regression runs for specific ARCHITECT execution profiles.
 
-A chat transcript or unpersisted test result is not a canonical baseline record.
+Portable clean-ROLE System Validation records live under `evaluation/system_validation/` and are governed separately.
+
+A chat transcript or unpersisted test result is not a canonical runtime baseline record.
 
 ## Status vocabulary
 
@@ -22,20 +23,13 @@ A chat transcript or unpersisted test result is not a canonical baseline record.
 
 ## Finalization rule
 
-A `KNOWN_GOOD` Registry entry is valid only when the matching full Run Record:
-- has the same `RUN_ID`;
-- has the same `FINALIZATION_TRANSACTION_ID`;
-- has status `KNOWN_GOOD`;
-- contains the corresponding Maintainer decision;
-- was canonically finalized in the same controlled transaction.
+A `KNOWN_GOOD` runtime Registry entry is valid only when the matching full Run Record has the same Run ID, Finalization Transaction ID and status and both artifacts are canonically finalized together.
 
-Where Git is used, finalize the Registry entry and full Run Record in the same commit.
-
-Any mismatch is `BASELINE_INCONSISTENT`, not `KNOWN_GOOD`.
+`KNOWN_GOOD` does not replace or imply clean-ROLE System Validation. A published clean release must already have its own System Validation evidence.
 
 ## Registry
 
-_No behavioral runs recorded yet._
+_No behavioral runtime runs recorded yet._
 
-| Baseline/Run ID | Finalization Tx | Status | ARCHITECT Release | Execution Profile | Governing Revision | EKB Revision | Runtime Record | Critical Result | Maintainer Authorization | Full Record |
-|---|---|---|---|---|---|---|---|---|---|---|
+| Baseline/Run ID | Finalization Tx | Status | ARCHITECT Release | Published Revision | Execution Profile | Runtime Record | Critical Result | Human Authorization | Full Record |
+|---|---|---|---|---|---|---|---|---|---|

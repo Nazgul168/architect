@@ -2,7 +2,7 @@
 # Runtime Deployment, Access & Isolation Protocol
 
 Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Release: 1.0.0
 
 ## 1. Purpose
 
@@ -13,7 +13,7 @@ It controls:
 - execution-engine/capability identity;
 - read/write truth;
 - Engagement and maintenance isolation;
-- EKB revision behavior;
+- clean ARCHITECT release/revision binding and Expert Memory read state;
 - platform/data-handling scope;
 - reproducibility.
 
@@ -35,9 +35,9 @@ Each material runtime records:
 - ARCHITECT Release ID;
 - Project Instructions ID;
 - governing source-pack revision;
-- EKB policy/revision;
-- ARCHITECT Maintainer ID from canonical governance metadata;
-- current-interactor Maintainer authorization status and verification mode for any Maintainer-only action.
+- clean ARCHITECT parent-release policy/revision and observed EKB state;
+- RF Owner / `ARCH-MAINT-001` same-human mapping when clean-role governance is in scope;
+- Role Updater availability/status when a clean-role change is intended.
 
 ### Execution profile
 - provider/product;
@@ -49,10 +49,10 @@ Each material runtime records:
 
 Never invent a hidden model revision.
 
-This release expects:
-- `ARCHITECT_RELEASE_ID: ARCH-0.2.1-RC5`
-- `PROJECT_INSTRUCTIONS_ID: ARCH-PI-0.2.1-RC5`
-- end sentinel: `ARCH-PI-END-0.2.1-RC5`
+The proposed 1.0.0 release line expects:
+- `ARCHITECT_RELEASE_ID: 1.0.0`
+- `PROJECT_INSTRUCTIONS_ID: ARCH-PI-1.0.0`
+- end sentinel: `ARCH-PI-END-1.0.0`
 
 ## 4. Execution-Engine Portability Control
 
@@ -128,7 +128,7 @@ A resource is available only when this runtime has a verified read path to the r
 Track:
 - governing System Protocols;
 - EKB;
-- canonical ARCHITECT governance metadata;
+- canonical ARCHITECT governance metadata and RF clean-role update boundary;
 - Engagement Memory;
 - Engagement Context.
 
@@ -146,15 +146,15 @@ Before ARCHITECT may execute or claim completion of:
 
 the runtime must have `VERIFIED` read access, at the expected revision, to:
 - the applicable governing System Protocols;
-- canonical ARCHITECT governance metadata;
+- canonical ARCHITECT governance metadata and RF clean-role update boundary;
 - the Evaluation/Regression protocol and Runtime Deployment protocol;
-- any canonical EKB/candidate material required by the operation.
+- any canonical EKB plus Engagement-side candidate/export material required by the operation.
 
 For a full behavioral baseline, the entire governing pack must be verified at the recorded revision.
 
 If any required read is `UNAVAILABLE` or `UNVERIFIED`:
-- do not perform Maintainer authorization as an executable system change;
-- do not perform canonical promotion/governing write/deployment;
+- do not treat human approval as executable clean-role modification;
+- do not bypass Role Updater or perform canonical clean-role promotion/governing write/deployment;
 - do not assign `KNOWN_GOOD`;
 - only prepare a proposal, patch, evaluation plan, or change set and disclose the blocked state.
 
@@ -169,25 +169,25 @@ No permanent ARCHITECT change is implemented until canonical write succeeds.
 
 No Engagement Memory update is canonically persisted until its Engagement-owned store confirms the write.
 
-## 10. EKB Revision Policy During an Engagement
+## 10. Clean ARCHITECT Parent-Release Policy During an Engagement
 
-A substantial Engagement declares:
+A substantial task-specific ARCHITECT binds to an exact published clean ARCHITECT release/revision and declares one policy:
 
-- `PINNED` — fixed EKB revision until deliberate rebind;
-- `CONTROLLED_UPDATE` — explicit pinned revision with deliberate upgrades allowed;
-- `FLOATING` — newest accessible validated EKB, suitable only where reproducibility risk is low.
+- `PINNED` — keep the bound release until an explicit rebind;
+- `CONTROLLED_UPDATE` — use an explicit bound release and adopt newer releases only after the recorded parent-role update authority approves;
+- `FOLLOW_LATEST` — follow the latest published parent release where reproducibility/risk permits.
 
-Default for substantial/auditable/sensitive/long-running Engagements: `CONTROLLED_UPDATE` from an explicit current pinned revision.
+Default for substantial/auditable/sensitive/long-running Engagements: `CONTROLLED_UPDATE`.
 
-Canonical EKB advancing does not silently alter a pinned/controlled Engagement runtime.
+Expert Memory/EKB is part of the bound clean release. It does not update independently from the parent-role binding.
 
-For A → B upgrade:
-- record both revisions;
+For release A → B adoption:
+- record both release identifiers/revisions;
 - assess material impact;
-- update runtime/Engagement binding;
-- re-evaluate affected decisions/tests where warranted.
-
-HOME/MAINTENANCE may normally track latest approved EKB but records observed revision.
+- update only parent-binding/materialized portable fields;
+- preserve Engagement Memory/sources/outputs/learning state;
+- record runtime synchronization separately;
+- re-evaluate affected Engagement decisions/tests where warranted.
 
 ## 11. Isolation Is Capability-Based
 
@@ -239,10 +239,11 @@ For confidential/client Engagements where applicable, separately record platform
 ## 14. Engagement Provenance
 
 A material Engagement records:
-- ARCHITECT Release;
+- bound clean ARCHITECT release + published release revision;
 - PI ID + content-verification status;
 - governing-pack revision;
-- EKB update policy + revision;
+- parent-role update policy;
+- observed EKB read revision/status (derived from the bound clean release);
 - Runtime ID;
 - execution profile;
 - isolation state.
@@ -260,13 +261,13 @@ Do not store secrets in runtime records.
 ## 16. Bootstrap / Verification Sequence
 
 1. identify expected release;
-2. read canonical Maintainer binding;
-3. when Maintainer-only action is intended, verify current acting principal authorization;
+2. read the canonical RF/ARCHITECT governance mapping when clean-role governance is in scope;
+3. for current single-user clean-role approval, require explicit current-human-owner approval through the governed Role Updater interaction;
 4. record execution profile;
 5. deploy PI;
 6. verify PI content integrity, not just ID;
 7. verify governing-pack read/revision;
-8. verify EKB read/revision and update policy;
+8. verify bound clean release/revision, parent update policy, and EKB read state;
 9. verify Engagement Memory access;
 10. verify required context isolation;
 11. verify platform/data-handling approval where required;

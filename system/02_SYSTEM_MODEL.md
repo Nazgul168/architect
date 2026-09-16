@@ -1,7 +1,7 @@
 # ARCHITECT System Model
 
 Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Release: 1.0.0
 
 ## 1. Purpose
 
@@ -36,14 +36,25 @@ Controls how experience may become canonical professional knowledge.
 Controls changes to permanent ARCHITECT through:
 - impact evaluation;
 - regression sensing;
-- ARCHITECT Maintainer authorization;
-- versioning;
+- Role Updater controlled-change evaluation;
+- RF Owner release approval;
+- mandatory System Validation;
+- SemVer/versioning;
 - rollback.
 
 ### G. Versioned Professional History
 Preserves causal evolution of the professional system.
 
 **Physical contract:** the canonical chronological history is the version-control/Git history of the canonical ARCHITECT repository. Semantic provenance and revision notes inside governed artifacts preserve the meaning and rationale of material changes.
+
+
+## RF-managed clean ROLE integration
+
+ARCHITECT is managed as a reusable clean ROLE under ROLE FACTORY v4.5. Task-specific ARCHITECT instances bind to an exact published clean release/revision and keep Engagement-specific state outside this repository.
+
+Learning discovered during an Engagement remains Engagement-side until explicitly approved for Role Updater review. ARCHITECT cannot self-promote such learning or directly update clean EKB/governing files.
+
+Published clean releases are one immutable self-contained revision, use SemVer, and require mandatory System Validation plus RF Owner approval. Post-release dependent propagation/runtime-sync state is external to the clean release.
 
 ## 3. Engagement-side layers
 
@@ -102,8 +113,10 @@ WORKING STATE
         ↓ accepted / established / important
 ENGAGEMENT MEMORY
         ↓ transferability + abstraction + epistemic validation
-CANDIDATE KNOWLEDGE
-        ↓ confidentiality + impact evaluation + ARCHITECT Maintainer authorization
+ENGAGEMENT-SIDE LEARNING CANDIDATE
+        ↓ human APPROVED_FOR_ROLE_REVIEW + Role Updater evaluation
+CONTROLLED CLEAN-ROLE CHANGE
+        ↓ System Validation + RF Owner release approval + publication
 EXPERT MEMORY / EKB
 ```
 
@@ -142,7 +155,7 @@ Known governing conflicts must be surfaced.
 
 An accepted change to Cognitive Core or a governing System Protocol that materially changes behavior represented in Project Instructions is not fully implemented until Project Instructions are synchronized.
 
-Any change to Project Instructions, Cognitive Core, governing System Protocols, or evaluation/control mechanisms requires explicit ARCHITECT Maintainer authorization after applicable evaluation and before canonical write/deployment.
+Any clean-ROLE change to Project Instructions, Cognitive Core, governing System Protocols, Expert Memory or evaluation/control mechanisms is routed through Role Updater, requires mandatory applicable System Validation, explicit RF Owner release approval, and canonical immutable publication before it is implemented.
 
 Synchronization includes the deployment step: the runtime's active Project Instructions ID/version must match the approved canonical Project Instructions source before the runtime is considered `SYNCED`.
 ## 9. Engagement truth authority
@@ -254,8 +267,8 @@ For permanent ARCHITECT adaptation:
 
 - **Reference / setpoint** — desired behavior encoded in governing sources and critical evaluation expectations.
 - **Plant** — current permanent ARCHITECT configuration.
-- **Sensors** — regression tests, ARCHITECT Maintainer corrections, observed Engagement failures, real outcomes.
-- **Controller** — governance rules plus ARCHITECT Maintainer judgment.
+- **Sensors** — regression tests, RF Owner / ARCHITECT Maintainer-alias corrections, observed Engagement failures, real outcomes.
+- **Controller** — governance rules plus RF Owner judgment and Role Updater controls.
 - **Actuators** — versioned changes to EKB, methods, protocols, Cognitive Core or Project Instructions.
 - **Feedback** — observed behavior after a permanent change.
 - **Rollback** — restoration of the last known good state after material regression.
@@ -298,7 +311,7 @@ No learning or governing change to permanent ARCHITECT is implemented until the 
 
 Preparing a candidate in chat is not implementation.
 
-ARCHITECT Maintainer approval without canonical write is not implementation.
+Human approval without a completed Role Updater release flow and canonical write is not implementation.
 
 ## 18. Portability
 

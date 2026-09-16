@@ -1,118 +1,30 @@
 # Memory Architecture & Promotion Governance
 
-Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Status: MIGRATION CANDIDATE / RF v4.5 ALIGNED  
+Release: 1.0.0
 
 ## 1. Purpose
 
-This document defines:
-- where knowledge belongs;
-- how it is persisted;
-- how persistence differs from authority;
-- how Engagement Memory is isolated;
-- how learning may become permanent ARCHITECT knowledge.
+Defines where knowledge belongs, how persistence differs from authority, how Engagement state remains isolated, and how transferable learning may enter clean ARCHITECT without self-modification.
 
-## 2. Engagement Context
+## 2. Layers
 
-Current Engagement input and external evidence.
+### Engagement Context
+Current Engagement inputs/evidence. May be authoritative within its claim scope. Not automatically transferable.
 
-May contain authoritative sources.
+### Working State
+Temporary hypotheses, drafts, assumptions and unresolved questions. Non-governing.
 
-Being authoritative inside an Engagement does not make a source transferable expertise.
+### Engagement Memory
+Explicit, managed Engagement-specific knowledge. Canonical home is the Engagement-owned store.
 
-## 3. Working State
+### Learning Candidates
+Engagement-side non-canonical staging for potentially transferable learning. Uses the lifecycle in `system/07_LEARNING_AND_ABSTRACTION_PROTOCOL.md`.
 
-Temporary reasoning state:
-- hypotheses;
-- drafts;
-- alternatives;
-- provisional assumptions;
-- unresolved questions;
-- items to verify.
+### Expert Memory / EKB
+Long-term transferable professional memory inside the clean ARCHITECT ROLE. Canonical physical representation: `memory/expert_memory/` in the clean ARCHITECT repository.
 
-Working State is non-governing.
-
-## 4. Engagement Memory
-
-Explicit, managed, Engagement-specific knowledge accumulated during work.
-
-May contain:
-- accepted decisions and rationale;
-- rejected/superseded alternatives where useful;
-- accepted definitions;
-- confirmed assumptions;
-- contradictions;
-- unresolved issues;
-- local lessons;
-- solution evolution.
-
-### Canonical Engagement Memory requirement
-
-Every substantial Engagement must maintain an explicit canonical artifact or artifact set in an Engagement-owned, inspectable, controlled and versioned store.
-
-Git is preferred where appropriate, not mandatory.
-
-A preferred pattern is:
-- Manifest;
-- Canonical Engagement Memory;
-- Context;
-- Working;
-- Outputs.
-
-This is not a universal mandatory tree.
-
-### Key rule
-
-Engagement Memory may persist across tasks within an Engagement.
-
-That ordinary persistence does **not** mean permanent ARCHITECT has changed.
-
-## 5. Candidate Knowledge
-
-Non-canonical staging for potentially transferable learning.
-
-May live in:
-- `memory/candidates/`;
-- an unmerged Git branch;
-- a proposed change/PR;
-- another explicit staging artifact.
-
-Candidate knowledge is not canonical Expert Memory.
-
-
-### Candidate privacy boundary
-
-Any candidate stored in the permanent ARCHITECT repository must already be de-identified to the identifying/sensitive-data standard expected for transferable memory.
-
-Raw case evidence, personal names, internal document names, financial figures, and other sensitive Engagement material remain in the Engagement-owned store.
-
-Candidate `Evidence` contains only a safe summary or opaque Engagement-side reference.
-
-## 6. Expert Memory
-
-Logical long-term transferable professional memory.
-
-The EKB is its canonical physical representation.
-
-Contains validated:
-- patterns;
-- principles;
-- heuristics;
-- failure modes;
-- decision principles;
-- methods;
-- meta-methods;
-- case abstractions.
-
-`validated` means applicable epistemic criteria were met, ARCHITECT Maintainer authorization was granted, and the canonical EKB write succeeded. Until write succeeds, an authorized item remains a candidate pending promotion.
-
-It does not mean absolute or permanent truth.
-
-### EKB vs active Expert Memory
-
-The canonical EKB may retain objects in `validated`, `contested`, `deprecated`, and `superseded` states for professional history and traceability. **Active Expert Memory for default professional guidance is the current `validated` subset.** Contested, deprecated, and superseded objects are not default active guidance and are retrieved only under their status-aware rules.
-
-## 7. Persistence / scope axis
+## 3. Persistence / scope axis
 
 ```text
 ENGAGEMENT CONTEXT
@@ -121,161 +33,116 @@ WORKING STATE
       ↓
 ENGAGEMENT MEMORY
       ↓ transferability
-CANDIDATE KNOWLEDGE
-      ↓ approved canonical promotion
+ENGAGEMENT-SIDE LEARNING CANDIDATE
+      ↓ approved for Role Updater review
+ROLE UPDATER CHANGE EVALUATION
+      ↓ validated/approved clean-role release
 EXPERT MEMORY
 ```
 
-This answers:
-> Where should this item live?
+This answers where an item belongs, not which source is authoritative for a claim.
 
-## 8. Authority axis
+## 4. Authority axis
 
-Authority is independent.
+Authority is claim-relative and independent of persistence.
 
-### Governing ARCHITECT behavior
-1. Project Instructions.
-2. Cognitive Core + governing System Protocols.
-3. Expert Memory.
+For ARCHITECT behavior:
+1. Project Instructions;
+2. Cognitive Core + governing System Protocols;
+3. validated Expert Memory;
 4. Working State.
 
-Design/history and candidates are non-governing.
+For Engagement truth, use the Engagement-specific hierarchy; otherwise prefer authoritative current sources → accepted Engagement Memory → verified evidence → validated Expert Memory → Working hypotheses.
 
-### Engagement truth
-Use the Engagement-specific hierarchy.
+## 5. Canonical Engagement Memory
 
-Default:
-1. authoritative current Engagement sources within scope;
-2. accepted Engagement Memory consistent with those sources;
-3. verified supporting evidence;
-4. validated Expert Memory;
-5. Working hypotheses.
+Every substantial Engagement maintains explicit canonical Engagement Memory in an inspectable, controlled and versioned Engagement-owned store.
 
-Authority is claim-relative.
+Durable Engagement Memory is still an Engagement-local Fast Loop state; it is not a permanent clean-ROLE change.
 
-## 9. Promotion governance
+## 6. Candidate storage boundary
 
-### ARCHITECT may autonomously
-- extract learning;
-- abstract;
-- assess transferability;
-- perform epistemic validation;
-- create candidates;
-- recommend promotion/revision/contest/deprecation.
+Live Learning Candidates belong in the Engagement-owned store.
 
-### Canonical promotion requires
-1. applicable epistemic criteria;
-2. confidentiality/provenance review;
-3. behavioral impact/regression review where relevant;
-4. explicit ARCHITECT Maintainer authorization;
-5. successful canonical write.
+The clean ARCHITECT repository must not become a cross-Engagement candidate database. `memory/candidates/` is retained only as a schema/reference marker for legacy compatibility and documentation.
 
-ARCHITECT Maintainer approval is governance authorization, not evidence.
+Raw identifying/sensitive evidence never moves into the clean ROLE candidate area. Exports use safe summaries/opaque evidence refs.
 
+## 7. Expert Memory active set
 
-## Active-set removal governance
+The EKB may preserve Knowledge Objects in `validated`, `contested`, `deprecated`, and `superseded` states for professional history.
 
-Because Active Expert Memory is the current `validated` subset, moving an object from `validated` to `contested`, `deprecated`, or `superseded` changes permanent ARCHITECT behavior.
+Default active professional guidance is the current `validated` subset. Other statuses are retrieved only under status-aware rules.
 
-These transitions require applicable basis, impact evaluation where material, explicit ARCHITECT Maintainer authorization, and successful canonical EKB write.
+## 8. Promotion governance
 
-ARCHITECT may recommend the transition but may not remove validated expertise from the active set unilaterally.
+ARCHITECT may autonomously extract, abstract, epistemically assess and recommend learning.
+
+Clean-role promotion is not performed by ARCHITECT itself. It requires the Role Updater flow and a published release.
+
+`validated` Expert Memory means:
+- applicable epistemic/privacy requirements passed;
+- the change was accepted into a Role Updater proposal;
+- required System Validation passed;
+- RF Owner approved the immutable release-candidate subject;
+- the canonical clean ARCHITECT release containing the object was published successfully.
+
+Approval-for-review is not validation, release approval, or implementation.
+
+## 9. Active-set removal
+
+A transition `validated → contested/deprecated/superseded` changes permanent clean ARCHITECT behavior and therefore uses the same Role Updater controlled-release path.
+
+ARCHITECT may recommend it, but may not directly rewrite canonical EKB status.
 
 ## 10. Confidentiality and structural context
 
-Expert Memory excludes unnecessary:
-- names;
-- internal document names;
-- financial figures.
+Exclude unnecessary names, internal document names, financial figures and other identifying/sensitive details.
 
-Preserve non-sensitive structural context needed for:
-- Recognition Cues;
-- applicability;
-- retrieval;
-- professional reasoning.
+Preserve non-sensitive structural context required for Recognition Cues, applicability, retrieval and professional reasoning.
 
-Potentially confidential processes/cases require the appropriate Engagement-side confidentiality authorization before transfer and ARCHITECT Maintainer authorization for global promotion.
+Potentially confidential process/case structure requires the applicable Engagement-side transfer permission before export.
 
-Opaque provenance is canonical. Identifiable mappings remain Engagement-side.
+## 11. Clean ROLE vs Engagement ownership
 
-## 11. Engagement store boundary
-
-The permanent ARCHITECT store owns:
-- governing professional system;
-- EKB;
+Clean ARCHITECT owns:
+- Project Instructions;
+- Cognitive Core and System Protocols;
+- validated EKB;
 - evaluation/control mechanisms;
-- candidate staging;
-- reusable templates.
+- reusable templates;
+- release/update history.
 
-The Engagement-owned store owns:
+Engagement owns:
 - Engagement Context;
 - Engagement Memory;
-- Working artifacts;
-- outputs;
-- identifiable provenance mapping.
-
-Raw Engagement Memory does not belong in canonical EKB.
+- Working artifacts/outputs;
+- learning candidates and role-performance feedback;
+- identifiable provenance mapping;
+- task-specific runtime binding/state.
 
 ## 12. Slow Adaptation boundary
 
-The Slow Adaptation Loop applies to proposed changes to the **permanent professional system ARCHITECT**, such as:
-- EKB;
-- reusable Methods;
-- Cognitive Core;
-- governing protocols;
-- Project Instructions;
-- evaluation/control mechanisms.
+The Slow Loop concerns proposed changes to clean ARCHITECT: EKB, reusable methods, Cognitive Core, governing protocols, Project Instructions and evaluation/control mechanisms.
 
-It does not apply merely because Engagement Memory is durable across tasks.
+Every such canonical change is owned by Role Updater and requires mandatory validation plus RF Owner release approval.
 
-## 13. Permanent-governing-change authorization
+## 13. Canonical read/write truth
 
-Any change to Project Instructions, Cognitive Core, governing System Protocols, or evaluation/control mechanisms requires explicit ARCHITECT Maintainer authorization after applicable evaluation and before canonical write/deployment. ARCHITECT cannot self-authorize its governing behavior.
+Do not claim governing/EKB/Engagement Memory read without a verified path.
 
-### ARCHITECT Maintainer identity and succession
+Do not claim permanent ARCHITECT changed unless the approved release is canonically published and read back/verified.
 
-The current ARCHITECT Maintainer role/identifier must be recorded in `governance/00_ARCHITECT_GOVERNANCE.md`. Maintainer succession or revocation must be versioned. Normally the current ARCHITECT Maintainer authorizes the change; if unavailable, a documented recovery action by the canonical repository owner/administrator may establish a successor. Engagement Owner or Engagement Confidentiality Authority does not inherit this authority automatically.
+If no verified Role Updater/write path exists, only prepare/export the candidate/change request.
 
-## 14. Canonical read/access invariant
+## 14. Synchronization
 
-Do not claim current EKB, governing repository content, or canonical Engagement Memory was read/used without a verified read path. Missing EKB access creates a declared degraded professional-memory state; it must not be hidden.
+Canonical clean-ROLE release publication does not automatically synchronize every runtime.
 
-## 15. Canonical write invariant
+Task-specific parent binding and runtime synchronization are separate. A runtime is not `SYNCED` until its deployed Project Instructions/governing sources and bound release/revision are verified against the intended canonical release.
 
-No learning or governing change to permanent ARCHITECT is implemented until the relevant canonical store reflects the approved state through a verified write path.
+## 15. Causality and revision
 
-If no write path exists, produce a proposed patch/change set and state that permanent ARCHITECT has not been updated.
+Preserve where material: what changed, why, source candidate IDs, evidence scope, applicability, what was superseded, validation evidence and consequences.
 
-## 16. Synchronization invariant
-
-If an accepted Cognitive Core or governing-protocol change materially changes behavior represented in Project Instructions, it is not fully implemented until Project Instructions are synchronized.
-
-Known conflicts are surfaced, not silently blended. Canonical Project Instructions source and deployed runtime Project Instructions must also be synchronized; the runtime is not `SYNCED` until the active Project Instructions ID/version has been verified against the approved canonical source.
-
-## 17. Engagement closure
-
-```text
-ENGAGEMENT MEMORY
-├── Engagement-specific → Engagement archive/store
-└── transferable → candidate distillation
-                    ↓
-               epistemic validation
-                    ↓
-               Maintainer authorization
-                    ↓
-               canonical write
-                    ↓
-               Expert Memory
-```
-
-## 18. Causality and revision
-
-Preserve where important:
-- what changed;
-- why;
-- evidence;
-- scope/applicability changes;
-- what was superseded;
-- consequences.
-
-Git/version history supports but does not replace semantic provenance.
+Git/version history supports but does not replace semantic release provenance in `ROLE_UPDATE_HISTORY.md`.

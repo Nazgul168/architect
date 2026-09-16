@@ -1,85 +1,68 @@
-
 # ARCHITECT Governance Registry
 
-Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Status: MIGRATION CANDIDATE / RF v4.5 ALIGNED  
+Release: 1.0.0
 
 ## Purpose
 
-This file is the canonical governance metadata for authority over the **permanent professional system ARCHITECT**.
+This file records ARCHITECT-local governance metadata while keeping clean-ROLE update authority consistent with ROLE FACTORY v4.5.
 
-It binds Maintainer authority independently of whichever user happens to interact with a runtime.
+It does not create a second clean-ROLE release authority.
 
-## Claim-relative authority
+## Current deployment authority mapping
 
-This registry is the canonical authority for claims about:
-- current ARCHITECT Maintainer ID/status;
-- Maintainer succession/revocation/recovery;
-- the principal-binding method for Maintainer-only authorization.
+The current deployment is single-user.
 
-It is **not** a behavioral instruction source. Project Instructions and governing Core/Protocols remain authoritative for what the Maintainer may authorize and how ARCHITECT must behave.
+```yaml
+RF_AUTH_ROLE: RF_OWNER
+ARCHITECT_MAINTAINER_ID: ARCH-MAINT-001
+ARCHITECT_MAINTAINER_STATUS: ACTIVE
+RELATIONSHIP: SAME_CURRENT_HUMAN_OWNER
+CLEAN_ROLE_RELEASE_AUTHORITY: RF_OWNER_ONLY
+CLEAN_ROLE_UPDATE_EXECUTOR: ROLE_UPDATER_TOOL
+```
 
-If sources conflict:
-- Maintainer identity/status claim → this Governance Registry prevails;
-- behavioral rule/scope-of-power claim → governing behavior hierarchy prevails.
+`ARCH-MAINT-001` is retained as an ARCHITECT-local/legacy human-governance label for continuity. In the current deployment it refers to the same current human owner as RF `AUTH-ROLE`.
 
-## Current ARCHITECT Maintainer
-
-ARCHITECT_MAINTAINER_ID: ARCH-MAINT-001  
-ROLE: Primary ARCHITECT Maintainer  
-STATUS: ACTIVE  
-PRINCIPAL_BINDING_METHOD: SINGLE_USER_CONTROLLED_RUNTIME / PLATFORM_IDENTITY / EXTERNAL_AUTHORIZATION  
-PRINCIPAL_REFERENCE: Canonical repository owner at initial bootstrap  
-CRYPTOGRAPHIC_IDENTITY_VERIFICATION: NOT_PROVIDED_BY_ARCHITECT
-
-### Initial binding
-
-`ARCH-MAINT-001` is the Maintainer designated at the **initial system bootstrap of ARCHITECT** by the owner of the canonical ARCHITECT repository.
-
-A new runtime, Engagement, ChatGPT Project, session, or interacting user does **not** create or replace the ARCHITECT Maintainer.
-
-A runtime must read this canonical binding, or receive an explicitly verified snapshot of it, before relying on Maintainer authority.
-
-Reading the binding proves **who is designated**, not that the current interlocutor is that person/principal.
-
-Before a Maintainer-only action, the runtime must record one of:
-- `CURRENT_INTERACTOR_MAINTAINER_STATUS: VERIFIED`;
-- `CURRENT_INTERACTOR_MAINTAINER_STATUS: NOT_MAINTAINER`;
-- `CURRENT_INTERACTOR_MAINTAINER_STATUS: UNVERIFIED`.
-
-Verification may rely on a platform identity control, a controlled single-user runtime, or an external authorization mechanism. If none is available, Maintainer-only actions are blocked; ARCHITECT may only prepare a proposal/change set.
+It does **not** independently authorize a clean-ROLE release, bypass Role Updater, create another authority, or permit ARCHITECT to self-approve.
 
 ## Authority scope
 
-The ARCHITECT Maintainer authorizes, where applicable:
+### ARCHITECT may autonomously
+- perform professional reasoning;
+- maintain Working State and Engagement Memory where the Engagement permits;
+- extract/de-identify learning;
+- assess transferability and epistemic quality;
+- create/update Engagement-side Learning Candidates;
+- mark candidates `RECOMMENDED_FOR_ROLE_REVIEW`;
+- propose clean-ROLE changes.
 
-- promotion of candidate Knowledge Objects into canonical validated Expert Memory;
-- transitions that remove/restrict validated objects from Active Expert Memory;
-- permanent governing-system changes;
-- evaluation-scope acceptance for permanent ARCHITECT changes;
-- release / known-good baseline designation;
-- Maintainer succession, revocation, or recovery.
+### Current human owner may
+- set Engagement learning candidates to `APPROVED_FOR_ROLE_REVIEW` when acting as the applicable Engagement-side approval authority;
+- explicitly approve Role Updater change proposals and release candidates as RF `AUTH-ROLE`;
+- approve local Engagement decisions where that Engagement assigns the owner that authority.
 
-Engagement Owner and Engagement Confidentiality Authority are separate roles and do not inherit this authority.
+### Role Updater owns canonical clean-ROLE evolution
+Any permanent ARCHITECT change — EKB/Expert Memory, methods, Cognitive Core, governing protocols, Project Instructions, evaluation/control mechanisms or release metadata — is evaluated and released through the Role Updater TOOL.
 
-## Succession / revocation
+Human approval is necessary but is not itself implementation. Canonical change exists only after the controlled Role Updater flow, mandatory validation, immutable release publication and verified write.
 
-A Maintainer change must be:
+## Engagement-side authorities
 
-1. explicitly authorized by the current ARCHITECT Maintainer; or
-2. if unavailable, performed through a documented recovery action by the canonical repository owner/administrator or another pre-authorized recovery authority.
+Engagement Owner and Engagement Confidentiality Authority remain separate claim-specific roles. They may govern Engagement-local decisions and transfer/confidentiality permissions.
 
-The change must be versioned in the canonical repository.
+They do not independently authorize a clean ARCHITECT release.
 
-No Engagement-side role or current interacting user becomes ARCHITECT Maintainer implicitly.
+In the current single-user deployment, if a task-specific ROLE's recorded `parent_role_update_authority` designates anyone other than the current human owner, parent-release adoption is `BLOCKED` until multi-user authority is explicitly designed.
 
-## Recovery authority
+## Candidate review vs clean-ROLE approval
 
-BOOTSTRAP_RECOVERY_AUTHORITY: Canonical ARCHITECT repository owner/administrator  
-RECOVERY_STATUS: ACTIVE
+`APPROVED_FOR_ROLE_REVIEW` means only that a candidate may be exported to Role Updater for evaluation. It is not an instruction to promote the candidate and is not clean-ROLE release approval.
 
-Do not store credentials, passwords, tokens, or secrets here.
+## Normative boundary
 
-## Change history
+A gap or ambiguity does not authorize ARCHITECT to invent external governance. Local choices are permitted only within the RF4-045 boundary. Unresolved externally normative decisions are surfaced and not operationalized.
 
-RC4 clarifies claim-relative authority and separates designated Maintainer identity from verification of the current acting principal.
+## Legacy authority note
+
+Before RF v4.5 migration, the Governance Registry treated ARCHITECT Maintainer as the direct authority for permanent ARCHITECT promotion/release. That behavior is superseded for clean-ROLE evolution by this mapping and the RF v4.5 Role Updater boundary. Historical records remain historical; they are not executable authority.

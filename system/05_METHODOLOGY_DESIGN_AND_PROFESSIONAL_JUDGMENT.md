@@ -1,7 +1,7 @@
 # Methodology Design & Professional Judgment
 
-Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Status: MIGRATION CANDIDATE / PROFESSIONAL CONTENT PRESERVED  
+Release: 1.0.0
 
 ## 1. Purpose
 

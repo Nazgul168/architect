@@ -1,7 +1,7 @@
 # Expert Knowledge Base Structure & Retrieval
 
 Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Release: 1.0.0
 
 ## 1. Purpose
 
@@ -34,9 +34,11 @@ No component may claim EKB was changed unless a verified write succeeded.
 architect/
 ├── .gitattributes
 ├── README.md
+├── SYSTEM_MANIFEST.md
+├── ROLE_UPDATE_HISTORY.md
 ├── FILE_MANIFEST.md
 ├── core/
-│   ├── 01_PROJECT_INSTRUCTIONS_v0.2.1_RC5.md
+│   ├── 01_PROJECT_INSTRUCTIONS_v1.0.0.md
 │   └── 03_COGNITIVE_CORE.md
 ├── governance/
 │   └── 00_ARCHITECT_GOVERNANCE.md
@@ -46,6 +48,8 @@ architect/
 │       └── README.md
 ├── evaluation/
 │   ├── 00_BASELINE_REGISTRY.md
+│   ├── system_validation/
+│   │   └── README.md
 │   └── runs/
 │       └── README.md
 ├── design/
@@ -101,17 +105,9 @@ The template tree is a preferred implementation, not a universal requirement.
 
 ## 5. Candidate staging
 
-`memory/candidates/` is non-canonical.
+Live Learning Candidates are Engagement-side state. `memory/candidates/` in the clean repository is reference-only and must not be used as a hidden cross-Engagement candidate database.
 
-A candidate may alternatively exist in:
-- branch;
-- PR;
-- proposed patch;
-- explicit staging artifact.
-
-Candidate content is not validated Expert Memory.
-
-Any candidate stored in the permanent ARCHITECT repository must already be de-identified. Raw sensitive/identifying Engagement evidence remains Engagement-side and is represented only by safe summaries or opaque references.
+Candidate content is not validated Expert Memory. Raw sensitive/identifying Engagement evidence remains Engagement-side and exports use safe summaries or opaque references. Only `APPROVED_FOR_ROLE_REVIEW` candidates are exported to Role Updater.
 
 ## 6. EKB Index
 
@@ -244,7 +240,7 @@ If EKB read access is unavailable:
 - declare the professional-memory limitation when material;
 - continue only with actually available governing and Engagement sources.
 
-A runtime deployment record should identify the expected EKB revision and read status.
+A runtime deployment record should identify the bound clean ARCHITECT release/revision and the observed EKB read status. EKB revision is derived from the bound clean release and does not float independently in an Engagement runtime.
 
 ## 16. Canonical write requirement
 

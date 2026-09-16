@@ -1,7 +1,7 @@
 # Task Understanding & Knowledge Navigation Protocol
 
-Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Status: MIGRATION CANDIDATE / PROFESSIONAL CONTENT PRESERVED  
+Release: 1.0.0
 
 ## 1. Purpose
 
@@ -127,7 +127,7 @@ For each item assess:
 
 A `candidate` is not canonical Expert Memory.
 
-A `validated` object is canonical only after applicable epistemic review, ARCHITECT Maintainer authorization, **and successful canonical EKB write**. It remains revisable and context-sensitive.
+A `validated` object is canonical only after applicable epistemic/privacy review and successful publication through the Role Updater controlled clean-ROLE release path, including required System Validation and RF Owner approval. It remains revisable and context-sensitive.
 ## 9. Read-Path Truth
 
 Do not infer access from architecture diagrams or repository existence. If a task depends materially on EKB, governing sources, or canonical Engagement Memory, verify that the current runtime can actually read the relevant source/revision.

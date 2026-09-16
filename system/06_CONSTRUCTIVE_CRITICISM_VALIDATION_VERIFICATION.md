@@ -1,7 +1,7 @@
 # Constructive Criticism, Validation & Verification
 
 Status: RELEASE CANDIDATE  
-Release: ARCH-0.2.1-RC5
+Release: 1.0.0
 
 ## 1. Constructive criticism is cross-cutting
 
@@ -79,16 +79,18 @@ Before a candidate Knowledge Object:
 - distinguish local implementation from transferable structure;
 - perform confidentiality review.
 
-Epistemic validation is not the same as ARCHITECT Maintainer authorization.
+Epistemic validation is not the same as approval-for-review or clean-ROLE release approval.
 
-ARCHITECT Maintainer approval does not substitute for evidence.
+Human approval does not substitute for evidence. ARCHITECT may prepare/recommend learning, but Role Updater owns canonical clean-ROLE change evaluation/release.
 
 ## 7. Meaning of `validated`
 
 A `validated` Knowledge Object has:
-- passed the applicable epistemic criteria;
-- received explicit ARCHITECT Maintainer authorization;
-- been successfully written to canonical EKB.
+- passed the applicable epistemic/privacy criteria;
+- been accepted through the Role Updater controlled-change path;
+- been covered by successful required System Validation;
+- been included in an RF-Owner-approved immutable clean ARCHITECT release;
+- been successfully published to canonical EKB as part of that release.
 
 It is not:
 - absolutely true;
